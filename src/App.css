@@ -105,7 +105,7 @@ body{
   margin-right:10%;
 }
 .newsmain{
-  width:60%;
+  width:55%;
   position: absolute;
   left:40%;
   top:230%;
@@ -114,11 +114,13 @@ body{
   flex-direction: row;
   flex-direction: column;
   background-color: rgba(240, 248, 255, 0.564);
-  /* height:40%; */
+  height:630%;
+  border-radius:30px;
+  margin-right:5%;
 }
-.newsmain button{
+.newsmain .news1{
   margin-left:1%;
-  width:30%;
+  width:10%;
   position:absolute;
   height:200%;
   border-color:transparent;
@@ -126,4 +128,17 @@ body{
   border-width:4px;
   transition: 0.7s;
   border-style:solid;
+}
+.newsmain .news1{
+  width: 80%;
+  position: absolute;
+  top:10%;
+  left:10%;
+  background-color: rgba(0, 0, 0, 0.386);
+  height:auto;
+  padding:5%;
+}
+.newsmain .more{
+  position: absolute;
+  bottom: 0%;
 }
