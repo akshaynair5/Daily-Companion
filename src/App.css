@@ -1,7 +1,10 @@
 .App {
   text-align: center;
 }
-
+.main{
+  display:flex;
+  flex-wrap: wrap;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +38,92 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.info{
+  position:absolute;
+  top:50%;
+  left:5%;
+  right:5%; 
+}
+body{
+  background-image: url('vector-cartoon-landscape-illustration-sun-cloud-hill.jpg');
+  background-size: cover;
+}
+.ipbx{
+  width:50%;
+  position:absolute;
+  left:30%;
+  height:70%;
+  border-width:4px;
+  border-color: transparent;
+  border-radius: 20px;
+  transition: 0.7s;
+  border-style:solid;
+}
+.ipbt{
+  margin-left:1%;
+  width:5%;
+  position:absolute;
+  left:80%;
+  height:70%;
+  border-color:transparent;
+  border-radius: 20px;
+  border-width:4px;
+  transition: 0.7s;
+  border-style:solid;
+}
+.ipbt:hover{
+  border-color:rgba(11, 255, 48);
+  background-color: black;
+  color:white;
+}
+.ipbx:hover{
+  border-color:rgb(11, 255, 48)
+}
+.info{
+  position: absolute;
+  top:35%;
+  background-color: #282c3445;
+  padding:5%;
+  border-radius:40px;
+}
+.info{
+  width:30%;
+  position: absolute;
+  top:230%;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.info .temp p{
+  font-size: 450%;
+}
+.info .aa{
+  display:flex;
+  flex-direction: column;
+  margin-right:10%;
+}
+.newsmain{
+  width:60%;
+  position: absolute;
+  left:40%;
+  top:230%;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex-direction: column;
+  background-color: rgba(240, 248, 255, 0.564);
+  /* height:40%; */
+}
+.newsmain button{
+  margin-left:1%;
+  width:30%;
+  position:absolute;
+  height:200%;
+  border-color:transparent;
+  border-radius: 20px;
+  border-width:4px;
+  transition: 0.7s;
+  border-style:solid;
 }
