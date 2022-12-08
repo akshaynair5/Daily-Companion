@@ -16,7 +16,7 @@ class Info extends React.Component{
                             <p><b>{this.props.tempe1}</b>F</p>
                         </div>
                         <div className='country'>
-                            <p><b>{this.props.city1} , {this.props.country1}</b></p>
+                            <p><b>{this.props.city1} , {this.props.country1} </b></p>
                         </div>
                     </div>
                     <div className="feelslike">
