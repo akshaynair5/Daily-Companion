@@ -9,7 +9,7 @@ class Info extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="fullinfo">
                 <div className="info">
                     <div className="aa">
                         <div className="temp">
