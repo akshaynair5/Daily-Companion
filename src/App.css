@@ -91,7 +91,7 @@ body{
 .info{
   width:30%;
   position: absolute;
-  top:230%;
+  top:280%;
   display:flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -112,7 +112,7 @@ body{
   width:55%;
   position: absolute;
   left:40%;
-  top:230%;
+  top:280%;
   display:flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -138,11 +138,12 @@ body{
   border-radius: 20px;
   width: 80%;
   position: absolute;
-  top:10%;
+  top:25%;
   left:10%;
   background-color: rgba(255, 255, 255, 0.386);
   height:auto;
   padding:5%;
+  font-size: larger;
 }
 .newsmain .more{
   position: absolute;
@@ -163,4 +164,34 @@ body{
     display:flex;
     flex-direction: column;
   }
+}
+.resp1 {
+  background-color: aliceblue;
+  position: absolute;
+  left:20%;
+  width:60%;
+  height: 100%;
+  top:150%;
+  padding:1%;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 1000;
+}
+.more {
+  width:55%;
+  position: absolute;
+  left:40%;
+  top:500%;
+}
+.newsmain .news1 .more{
+    height: 45px;
+    position: absolute;
+    top:90%;
+    width:100%;
+    left:0%;
+    border-color: #282c34;
+    background-color: #282c34;
+    border-radius: 20px;
+    color:aliceblue;
+    font-weight: 700;
 }

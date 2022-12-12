@@ -3,6 +3,7 @@ import { useState,useEffect } from "react";
 import App from "../App";
 // import './App.css';
 import Info from "./info";
+import Resp from "./resp"
 class Navbar extends React.Component{
     constructor() {
         super()
@@ -14,7 +15,8 @@ class Navbar extends React.Component{
             temp_min:null,
             deg:null,
             gus:null,
-            inputText:null
+            inputText:null,
+            report:null
         };
 
     }
@@ -42,6 +44,8 @@ class Navbar extends React.Component{
                                 gus : data.list[0].wind.gust,
                                 coun : data.city.country,
                                 city : data.city.name,
+                                report : data.list[0].weather[0].description,
+                                main1 :data.list[0].weather[0].main
                             })
 
                 })
@@ -49,11 +53,12 @@ class Navbar extends React.Component{
         }
     render(){
         return( 
-            <nav className="navbar">
+            <nav className="navbar" onMouseEnter = { () => this.Loadcon()}>
                 <div className="container-fluid">
-                    <p className="navbar-brand" ><b>Weather Now</b></p>
+                    <p className="navbar-brand" ><b>Daily Companion</b></p>
                     <input className="ipbx" placeholder="Search City" aria-label="Search" id="sbar" onChange={(e) => this.setState({ inputText: e.target.value })} ></input>
                     <button  onClick = { () => this.Loadcon()} className="ipbt">Search</button>
+                    <Resp desc = {this.state.report}/>
                     <Info tempe1={this.state.tempe} feels1 ={this.state.feels} winds1 = {this.state.winds}
                         gus1 = {this.state.gus} country1 = {this.state.coun}  city1 = {this.state.city}/>
                 </div>

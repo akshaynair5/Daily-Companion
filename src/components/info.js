@@ -6,21 +6,21 @@ import News from './news';
 // import './App.css';
 
 class Info extends React.Component{
-
     render(){
         return(
             <div className="fullinfo">
+
                 <div className="info">
                     <div className="aa">
                         <div className="temp">
-                            <p><b>{this.props.tempe1}</b>F</p>
+                            <p><b>{this.props.tempe1}</b>℉</p>
                         </div>
                         <div className='country'>
                             <p><b>{this.props.city1} , {this.props.country1} </b></p>
                         </div>
                     </div>
                     <div className="feelslike">
-                        <p><b>Feels Like : </b>{this.props.feels1} F</p>
+                        <p><b>Feels Like : </b>{this.props.feels1} ℉</p>
                     </div>
                     <div className="nwea">
                         <p> </p>

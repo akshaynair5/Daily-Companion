@@ -15,7 +15,7 @@ class News extends React.Component{
     getnews(){
 
         if(!(this.state.ignore)){
-            fetch('https://newsapi.org/v2/everything?q=tesla&from=2022-11-09&sortBy=publishedAt&apiKey=4b411d14e13a431bb655435986a32cc5')
+            fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4b411d14e13a431bb655435986a32cc5')
             .then(response => response.json())
             .then(data =>{
                 console.log(data);
@@ -33,7 +33,7 @@ class News extends React.Component{
         }
     }
     getmore(){
-        fetch('https://newsapi.org/v2/everything?q=tesla&from=2022-11-09&sortBy=publishedAt&apiKey=4b411d14e13a431bb655435986a32cc5')
+        fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4b411d14e13a431bb655435986a32cc5')
             .then(response => response.json())
             .then(data =>{
                 const temp = this.state.i;
@@ -50,8 +50,8 @@ class News extends React.Component{
     }
     render(){
         return(
-            <div className="newsmain">
-                <button onClick={() => this.getnews()} >Get Latest News</button>
+            <div className="newsmain"  onMouseEnter = { () => this.getnews()}>
+                {/* <button onClick={() => this.getnews()} >Get Latest News</button> */}
                 <div className="news1">
                     <img src={this.state.imgurl} className="img"></img>
                     <p className="headline"><b>{this.state.headlines}</b></p>
