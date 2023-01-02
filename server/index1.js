@@ -1,11 +1,12 @@
 const express = require('express')
-const bod_parser = require('body-parser')
+const body_parser = require('body-parser')
 const app = express()
 const mysql = require('mysql')
 const cors  = require('cors')
 
 
 app.use(cors());
+app.use(express.json())
 const db = mysql.createConnection({
     user:'root',
     host: 'localhost',
@@ -13,42 +14,32 @@ const db = mysql.createConnection({
     database: 'daily-companion'
 });
 
-db.connect(function(err){
-    if(err){
-        console.log(err);
-    }
-    // app.post("http://localhost/phpmyadmin/index.php?route=/sql&db=daily-companion&table=users.dc&pos=0",(req, res) => {
-    // const name = req.body.name;
-    // const email = req.body.name;
-    // const country = req.body.name;
-    // const state = req.body.name;
+// $query = 'SELECT * FROM `users.dc`'
 
-    //     db.query("INSERT INTO users.dc (name,email,country,state) VALUES (?,?,?,?)",[name,email,country,state],
-    //     (err,result) => {
-    //         if(err){
-    //             console.log('Error values not inserted');
-    //         } else{
-    //             res.send("Values inserted")
-    //         }
-    //     }
-    //     )
-    // })
-    
 
-})
-$query = 'SELECT * FROM `users.dc`'
 
-db.query($query , function(err,rows,fields){
-    if(err){
-        console.log(err.code);
-        console.log("An error occured");
-        return;
-    } 
-     console.log("Successful excecution",rows);
-     app.get("",(req, res) => res.json(rows))
+app.post("/new/signup",(req,res) =>{
+    const name = req.body.uname
+    const password = req.body.upassword
+    const email = req.body.uemail
+    const country = req.body.ucountry
+    const state = req.body.ustate
+    db.query(
+        "INSERT INTO `users.dc`(`name`, `password`, `email`, `country`, `state`) VALUES (?,?,?,?,?)",
+        [name,password,email,country,state],(err,result) =>{
+            if(err){
+                console.log(err);
+            }else{
+                console.log("success")
+            }
+        }
+    )
 })
 
-
+// app.get("/data",(req,res)=>{
+//     const state = req.body.state
+//     db.query("SELECT state FROM ")
+// })
 
 
 app.listen(3001 , () => {
