@@ -263,6 +263,29 @@ body{
     background-repeat: repeat;
   }
 }
+.sform{
+  position:absolute;
+  top:20%;
+  left:30%;
+  padding:0%;
+  background-color: #282c34;
+  border-radius: 30px;
+}
+.sform input{
+  height: fit-content;
+  text-align: center;
+  width:56%;
+  padding:2%;
+  margin:2%;
+  border-radius: 10px;
+}
+.sform .link1{
+  text-decoration: none;
+  position:relative;
+  left:20%;
+  font-size: 120%;
+
+}
 @media all and (min-width:450px) and (max-width:950px){
 
   .fullinfo .info{
@@ -298,4 +321,29 @@ body{
     height: 1000%;
     width: 100%;
   }
+  .sform{
+    position:absolute;
+    top:20%;
+    left:10%;
+    right:10%;
+    padding:10%;
+    background-color: #282c34;
+    border-radius: 30px;
+  }
+  .sform input{
+    text-align: center;
+    width:86%;
+    padding:1%;
+    margin:4%;
+    border-radius: 10px;
+    height:50px;
+  }
+  .sform .link1{
+    text-decoration: none;
+    position:relative;
+    left:20%;
+    font-size: 120%;
+  
+  }
 }
+ 
