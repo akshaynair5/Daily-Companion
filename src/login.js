@@ -70,7 +70,7 @@ class Login extends React.Component{
                 })
             })
     }
-    const nav = useNavigate()
+    // const nav = useNavigate()
     render(){
         return(
                 <div className="sform">
