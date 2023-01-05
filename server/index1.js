@@ -60,6 +60,34 @@ app.post("/validation",(req,res)=>{
 })
 
 
+// notes saving and editing done here
+
+app.post("/savingnotes",(req,res)=>{
+    const userid = req.body.userid
+    const note = req.body.note
+
+    db.query("INSERT INTO `notes`(`userid`, `note`) VALUES (?,?)",
+    [userid,note],(err,result) =>{
+        if(err){
+            console.log(res.err);
+        }else{
+            console.log("success")
+        }
+    })
+})
+
+app.post("/gettingnotes",(req,res)=>{
+    const userid = req.body.userid
+
+    db.query("SELECT `note` FROM `notes` WHERE `userid`=?",[userid],(err,result)=>{
+        if(err){
+            console.log(res.err);
+        }else{
+            console.log("Found your notes!!");
+        }
+    })
+})
+
 app.listen(3001 , () => {
     console.log('running on port 3001')
 });
