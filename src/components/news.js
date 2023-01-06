@@ -12,7 +12,7 @@ class News extends React.Component{
             ignore:false
         }
     }
-    getnews(){
+    componentDidMount(){
 
         if(!(this.state.ignore)){
             fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4b411d14e13a431bb655435986a32cc5')

@@ -21,7 +21,7 @@ class Navbar extends React.Component{
         };
 
     }
-    initial= () =>{
+    componentDidMount(){
         fetch()
         fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${this.state.inputText},&limit=5&appid=9413103f25a00a0e82d52d9040e82435`)
             .then(response => response.json())
@@ -85,7 +85,7 @@ class Navbar extends React.Component{
         }
     render(){
         return( 
-            <nav className="navbar" onLoad = {() =>this.initial()}onMouseEnter = { () => this.Loadcon()}>
+            <nav className="navbar">
                 <div className="container-fluid">
                     <p className="navbar-brand" ><b>Daily Companion</b></p>
                     <input className="ipbx" placeholder="Search City" aria-label="Search" id="sbar" onChange={(e) => this.setState({ inputText: e.target.value })} ></input>

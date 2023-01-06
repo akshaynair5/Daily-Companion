@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+// import {withRouter} from 'react-router-dom';
 
 class Logintable extends React.Component{
     constructor(){
@@ -46,8 +47,11 @@ class Logintable extends React.Component{
 
 class Login extends React.Component{
     constructor(){
-        super()
+        super();
+        // this.validation()=this.validation.bind(this);
         this.state = {
+            // show:"hidden",
+            show:"visible",
             username:null,
             state:null,
             country:null,
@@ -64,11 +68,22 @@ class Login extends React.Component{
             }).then((response)=>{
                 console.log(response.data)
                 this.setState({
+                    show:"visible",
                     username:response.data[0].name,
                     state:response.data[0].state,
-                    country:response.data[0].country
+                    country:response.data[0].country,
+                    // redirect:true
                 })
             })
+
+            // if(this.state.username != null){
+                // setTimeout(()=>{
+                //     console.log("fu");
+                //     this.state.redirect && <Navigate to='/home' replace={true}/>
+                // } , 1000)
+    }
+    redir(){
+
     }
     // const nav = useNavigate()
     render(){
@@ -79,11 +94,12 @@ class Login extends React.Component{
                     <input type="button" onClick={(e) => this.validation(e)} value="Sign-Up"></input>
                     <p>Not a member?</p>
                     <Link to='/new/signup' className="link1">click here to Signup</Link>
-                    <input type="button" onClick={(e) => this.redir('/home')} value="Sign-Up"></input>
+                    <Link className="redir" to="/home" style={{color:"white",visibility:this.state.show}} value="Sign-Up">Move to home page</Link>
 
                 </div>
         )
     }
 }  
 
+// export default withRouter(Login);
 export {Logintable , Login}
