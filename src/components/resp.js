@@ -8,7 +8,7 @@ class Resp extends React.Component{
             bgimg:null
         };
     }
-    decider() {
+    componentDidMount() {
         if(this.props.desc == 'rainy'){
             this.setState({
                 desc:"Make sure to take your umbrella!! as it is rainy outside",
