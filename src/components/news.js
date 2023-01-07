@@ -50,7 +50,7 @@ class News extends React.Component{
     }
     render(){
         return(
-            <div className="newsmain"  onMouseEnter = { () => this.getnews()}>
+            <div className="newsmain" >
                 {/* <button onClick={() => this.getnews()} >Get Latest News</button> */}
                 <div className="news1">
                     <img src={this.state.imgurl} className="img"></img>
