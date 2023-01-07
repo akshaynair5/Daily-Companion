@@ -70,7 +70,10 @@ app.post("/savingnotes",(req,res)=>{
     [userid,note],(err,result) =>{
         if(err){
             console.log(res.err);
-        }else{
+        }
+        if(result.length>0){
+
+            res.send(result)
             console.log("success")
         }
     })
@@ -83,7 +86,8 @@ app.post("/gettingnotes",(req,res)=>{
         if(err){
             console.log(res.err);
         }else{
-            console.log("Found your notes!!");
+            const data = JSON.parse(JSON.stringify(result))
+            res.send(data);
         }
     })
 })

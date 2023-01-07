@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Raleway:wght@200&display=swap');
 .App {
   text-align: center;
 }
@@ -47,7 +48,10 @@
   right:5%; 
 }
 body{
-  background-image: url('QvC7Gw.jpg');
+  font-family: 'Dosis', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  color:antiquewhite;
+  background-image: url('wp2445768.webp');
   background-size: cover;
 }
 .ipbx{
@@ -64,6 +68,8 @@ body{
   text-align: center;
   font-weight: 500;
   font-size: larger;
+  background-color: transparent;
+  color:white;
 }
 
 .ipbt{
@@ -80,12 +86,12 @@ body{
   border-color: #282c34;
 }
 .ipbt:hover{
-  border-color:rgba(11, 255, 48);
+  border-color:antiquewhite;
   background-color: black;
   color:white;
 }
 .ipbx:hover{
-  border-color:rgb(11, 255, 48)
+  border-color:beige
 }
 .info{
   position: absolute;
@@ -93,14 +99,18 @@ body{
   background-color: #00000045;
   padding:5%;
   border-radius:40px;
-}
-.info{
   width:30%;
   position: absolute;
   top:280%;
   display:flex;
   flex-wrap: wrap;
   flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.715) 0px 15px 20px;
+  transition: 0.5s ease;
+}
+.info:hover{
+  box-shadow: rgb(0, 0, 0) 0px 15px 20px;
+  transition: 0.5s ease;
 }
 .fullinfo{
   display:flex;
@@ -155,6 +165,12 @@ body{
   height:auto;
   padding:5%;
   font-size: larger;
+  box-shadow: rgba(0, 0, 0, 0.715) 0px 15px 20px;
+  transition: 0.5s ease;
+}
+.newsmain .news1:hover{
+  box-shadow: rgb(0, 0, 0) 0px 15px 20px;
+  transition: 0.5s ease;
 }
 .newsmain .more{
   position: absolute;
@@ -175,6 +191,12 @@ body{
   border-radius: 30px;
   font-size: 20px;
   font-weight: 1000;
+  box-shadow: rgba(0, 0, 0, 0.461) 0px 15px 20px;
+  transition: 0.5s ease;
+}
+.resp1:hover{
+  box-shadow: rgba(0, 0, 0, 0.612) 0px 15px 20px;
+  transition: 0.5s ease;
 }
 .more {
   width:55%;
