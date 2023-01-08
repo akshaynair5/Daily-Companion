@@ -65,9 +65,11 @@ app.post("/validation",(req,res)=>{
 app.post("/savingnotes",(req,res)=>{
     const userid = req.body.userid
     const note = req.body.note
+    const from = req.body.from
+    const to = req.body.to
 
-    db.query("INSERT INTO `notes`(`userid`, `note`) VALUES (?,?)",
-    [userid,note],(err,result) =>{
+    db.query("INSERT INTO `notes`(`userid`, `note`,`from`,`to`) VALUES (?,?,?,?)",
+    [userid,note,from,to],(err,result) =>{
         if(err){
             console.log(res.err);
         }
@@ -82,7 +84,7 @@ app.post("/savingnotes",(req,res)=>{
 app.post("/gettingnotes",(req,res)=>{
     const userid = req.body.userid
 
-    db.query("SELECT `note` FROM `notes` WHERE `userid`=?",[userid],(err,result)=>{
+    db.query("SELECT `time`,`note`,`from`,`to` FROM `notes` WHERE `userid`=? ORDER BY `time` DESC",[userid],(err,result)=>{
         if(err){
             console.log(res.err);
         }else{

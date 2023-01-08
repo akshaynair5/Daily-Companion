@@ -4,6 +4,7 @@ import App from "../App";
 // import './App.css';
 import Info from "./info";
 import Resp from "./resp"
+import { Link, Navigate } from 'react-router-dom';
 class Navbar extends React.Component{
     constructor() {
         super()
@@ -88,6 +89,8 @@ class Navbar extends React.Component{
             <nav className="navbar">
                 <div className="container-fluid">
                     <p className="navbar-brand" ><b>Daily Companion</b></p>
+                    <Link to='/home' className="link2">Home</Link>
+                    <Link to='/Notes' className="link3">Notes</Link>
                     <input className="ipbx" placeholder="Search City" aria-label="Search" id="sbar" onChange={(e) => this.setState({ inputText: e.target.value })} ></input>
                     <button  onClick = { () => this.Loadcon()} className="ipbt">Search</button>
                     <Resp desc = {this.state.report}/>
