@@ -44,7 +44,7 @@ class Notes extends React.Component{
                     <p className="navbar-brand" ><b>Daily Companion</b></p>
                     <Link to='/home' className="link2" style={{height:"6%"}}>Home</Link>
                     <Link to='/Notes' className="link3" style={{height:"6%"}}>Notes</Link>
-                    <input  type="button" value="Logout"></input>
+                    {/* <input  type="button" value="Logout"></input> */}
                 </div>
                 <div className="notepad">
                     {/* <textarea type="text" placeholder="Type your new note here" maxLength={100} onChange={(e)=>this.setState({note:e.target.value})}></textarea> */}
