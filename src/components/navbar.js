@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState,useEffect } from "react";
+import {Username} from '../project_context/context';
 import App from "../App";
+import Loadname from "./input";
 // import './App.css';
 import Info from "./info";
 import Resp from "./resp"
@@ -18,7 +20,7 @@ class Navbar extends React.Component{
             deg:null,
             gus:null,
             inputText:null,
-            report:null
+            report:null,
         };
 
     }
@@ -88,6 +90,7 @@ class Navbar extends React.Component{
         return( 
             <nav className="navbar">
                 <div className="container-fluid">
+                    <Loadname/>
                     <p className="navbar-brand" ><b>Daily Companion</b></p>
                     <Link to='/home' className="link2">Home</Link>
                     <Link to='/Notes' className="link3">Notes</Link>
@@ -101,4 +104,5 @@ class Navbar extends React.Component{
         )
     }
 }
+export {Loadname}
 export default Navbar 
