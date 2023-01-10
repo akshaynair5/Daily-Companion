@@ -1,15 +1,12 @@
-import React from "react";
-// import './App.css';
+import React, { useContext } from "react";
+import { useState,useEffect } from "react";
+import {Username} from '../project_context/context';
 
-class Inp extends React.Component{
-    render(){
-        return(
-            <div className="inp">
-                <input type="text" placeholder= "Enter Country name" className="inpt"></input>
-                <input type="text" placeholder= "Enter state name" className="inpt"></input>
-            </div>
+function Loadname(){
+    const [username,setUsername] = useContext(Username)
+    return(
+        <h1>{username}</h1>
         )
-    }
-} 
+}
 
-export default Inp
+export default Loadname

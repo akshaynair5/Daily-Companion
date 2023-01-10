@@ -46,7 +46,7 @@ app.post("/new/signup",(req,res) =>{
 app.post("/validation",(req,res)=>{
     const email = req.body.email
     const password = req.body.password
-    db.query("SELECT * FROM `users.dc` WHERE email= ? AND password= ?",[email,password],(err,result)=>{
+    db.query("SELECT `id`,`name` FROM `users.dc` WHERE email= ? AND password= ?",[email,password],(err,result)=>{
         if(err){
             res.send({err :err});
         }
