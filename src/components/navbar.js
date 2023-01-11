@@ -25,7 +25,6 @@ class Navbar extends React.Component{
 
     }
     componentDidMount(){
-        fetch()
         fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${this.state.inputText},&limit=5&appid=9413103f25a00a0e82d52d9040e82435`)
             .then(response => response.json())
             .then(data => {
@@ -90,7 +89,7 @@ class Navbar extends React.Component{
         return( 
             <nav className="navbar">
                 <div className="container-fluid">
-                    <Loadname/>
+                    {/* <Loadname/> */}
                     <p className="navbar-brand" ><b>Daily Companion</b></p>
                     <Link to='/home' className="link2">Home</Link>
                     <Link to='/Notes' className="link3">Notes</Link>
