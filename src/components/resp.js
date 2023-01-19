@@ -1,40 +1,28 @@
-import React from "react"
-// import nr from 'hr.jpeg';
-class Resp extends React.Component{
-    constructor () {
-        super()
-        this.state = {
-            desc:null,
-            bgimg:null
-        };
-    }
-    componentDidMount() {
-        if(this.props.desc == 'rainy'){
-            this.setState({
-                desc:"Make sure to take your umbrella!! as it is rainy outside",
-                bgimg:"hr.jpeg"
-            })
+import React, { useContext, useState } from "react"
+import {Username} from '../project_context/context';
+import { useEffect } from "react";
+
+function Resp(props){
+    // const [bgimg,setbgimg] = useState()
+    const [desc,setdesc] = useState()
+    useEffect(()=> {
+        if(props.desc == 'rainy'){
+            setdesc(`, Make sure to take your umbrella!! as it is rainy outside`)
         }
-        else if(this.props.desc == 'light rain'){
-            this.setState({
-                desc:"A bit of light rain outside but do take your umbrella just to be safe!!",
-                bgimg:"lr.jpg"
-            })
+        else if(props.desc == 'light rain'){
+            setdesc(`, A bit of light rain outside but do take your umbrella just to be safe!!`)
+        }
+        else if(props.desc == 'overcast clouds'){
+            setdesc(`,there's Some overcast clouds but nothing to worry about enjoy your day!!`)
         }
         else{
-            this.setState({
-                desc:"Enjoy today's weather with beautiful clear skies !!!",
-                bgimg:"sd.jpg"
-            })
+            setdesc(`, Enjoy today's weather with beautiful clear skies !!!`)
         }
-    }
-    render(){
-        return (
-            <div className="resp1" onMouseEnter = {() => this.decider()} style={{background:this.state.bgimg}}>
-                <p>{this.state.desc} </p>
-            </div>
-
-        )
-    }
+    })
+    return(
+        <div className="resp1" >
+            <p>Hey {desc} </p>
+        </div>
+    )
 }
 export default Resp

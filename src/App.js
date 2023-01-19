@@ -5,11 +5,12 @@ import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import {Logintable , Login} from './login.js';
 import Notes from './components/notes';
 import {Username} from './project_context/context'
+import { useState } from 'react';
 function App() {
-  const [username,setusername] = useContext(Username)
+  const [username,setUsername] = useState(Username);
   return (
     <Router>
-      <Username.Provider value = {[username,setusername]}>
+      <Username.Provider value = {{username,setUsername}}>
         <Routes>
             <Route exact path="/home" element={<Navbar />} />
             <Route exact path="/signup" element={<Logintable />} />

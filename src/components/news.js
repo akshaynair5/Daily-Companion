@@ -52,10 +52,11 @@ class News extends React.Component{
         return(
             <div className="newsmain" >
                 {/* <button onClick={() => this.getnews()} >Get Latest News</button> */}
-                <div className="news1">
-                    <img src={this.state.imgurl} className="img"></img>
-                    <p className="headline"><b>{this.state.headlines}</b></p>
-                    <p className="newss">{this.state.news}</p>
+                <div className="news1" style={{backgroundImage:`url(${this.state.imgurl})`}}>
+                    <div className="newsdiv" style={{backgroundColor:'rgba(0, 0, 0, 0.564)',padding:'8%',backgroundSize:'contain'}}>
+                        <p className="headline"><b>{this.state.headlines}</b></p>
+                        <p className="newss">{this.state.news}</p>
+                    </div>
                     <a href = {this.state.url}>Read More</a>
                     <button onClick = {() => this.getmore()} className="more">More News</button>
                 </div>

@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext ,useState } from "react";
 import axios from "axios";
 import { Link, Navigate } from 'react-router-dom';
+import {Username} from './project_context/context';
+import { useEffect } from "react";
+import { SetCookie,RemoveCookie,GetCookie } from "./cookies";
 // import {withRouter} from 'react-router-dom';
 
 class Logintable extends React.Component{
@@ -45,61 +48,41 @@ class Logintable extends React.Component{
     }
 }
 
-class Login extends React.Component{
-    constructor(){
-        super();
-        // this.validation()=this.validation.bind(this);
-        this.state = {
-            // show:"hidden",
-            show:"visible",
-            username:null,
-            state:null,
-            country:null,
-            email:null,
-            password:null,
-            state:null
-        }
-    }
-    validation = async (e) =>{
-        e.preventDefault();
+
+function Login(){
+    const [show,setShow] = useState("hidden")
+    const [name,setName] = useState()
+    const [state,setState] = useState()
+    const [country,setCountry] = useState()
+    const [email,setEmail] = useState()
+    const [password,setPass] = useState()
+    const {username,setUsername} = useContext(Username);
+    const validation = async (e) =>{
+                e.preventDefault()
                 await axios.post("http://localhost:3001/validation",{
-                email:this.state.email,
-                password:this.state.password
+                email:email,
+                password:password
             }).then((response)=>{
                 console.log(response.data)
-                this.setState({
-                    show:"visible",
-                    username:response.data[0].name,
-                    state:response.data[0].state,
-                    country:response.data[0].country,
-                    // redirect:true
-                })
+                        setShow("visible")
+                        setName(response.data[0].name)
+                        setState(response.data[0].state)
+                        setCountry(response.data[0].country)
+                        setUsername(name)
             })
-
-            // if(this.state.username != null){
-                // setTimeout(()=>{
-                //     console.log("fu");
-                //     this.state.redirect && <Navigate to='/home' replace={true}/>
-                // } , 1000)
     }
-    redir(){
-
-    }
-    // const nav = useNavigate()
-    render(){
-        return(
-                <div className="sform">
-                    <input type="email" className="ipem" placeholder="E-mail" onChange={(e)=>{this.setState({email:e.target.value})}}></input>
-                    <input type="text" className="ippa" placeholder="Password" onChange={(e)=>{this.setState({password:e.target.value})}}></input>
-                    <input type="button" onClick={(e) => this.validation(e)} value="Sign-Up"></input>
-                    <p>Not a member?</p>
-                    <Link to='/new/signup' className="link1">click here to Signup</Link>
-                    <Link className="redir" to="/home" style={{color:"white",visibility:this.state.show}} value="Sign-Up">Move to home page</Link>
-
-                </div>
-        )
-    }
-}  
-
+    return(
+        <div>
+            <div className="sform">
+                <input type="email" className="ipem" placeholder="email" onChange={(e)=>{setEmail(e.target.value)}}></input>
+                <input type="text" className="ippa" placeholder="Password" onChange={(e)=>{setPass(e.target.value)}}></input>
+                <input type="button" onClick={(e) => validation(e)} value="Sign-Up"></input>
+                <p>Not a member?</p>
+                <Link to='/new/signup' className="link1">click here to Signup</Link>
+                <Link className="redir" to="/home" style={{color:"white",visibility:show}} value="Sign-Up">Move to home page</Link>
+            </div>
+        </div>
+    )
+}
 // export default withRouter(Login);
 export {Logintable , Login}
