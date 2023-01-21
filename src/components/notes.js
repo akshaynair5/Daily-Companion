@@ -35,6 +35,14 @@ class Notes extends React.Component{
                     this.setState({
                         usernotes:response.data
                     })
+                // this.state.usernotes.map((to,i)=>{
+                //     if(to<timestamp()){
+                //         const temp = this.state.usernotes.splice(i,1)
+                //         this.setState({
+                //             usernotes:temp
+                //         })
+                //     }
+                // })
             })
     }
     render(){

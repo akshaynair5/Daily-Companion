@@ -21,6 +21,9 @@ class Navbar extends React.Component{
             gus:null,
             inputText:null,
             report:null,
+            us:null,
+            un:null,
+            uc:null
         };
 
     }
@@ -30,12 +33,9 @@ class Navbar extends React.Component{
             .then(data => {
                 const lati = data[0].lat;
                 const long = data[0].lon;
-                console.log(lati);
-                console.log(long);
                 fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lati}&lon=${long}&appid=9413103f25a00a0e82d52d9040e82435&units=imperial`)
                     .then(response => response.json())
                     .then(data => {
-                        console.log(data);
                         this.setState ({
                                 tempe : data.list[0].main.temp,
                                 feels : data.list[0].main.feels_like,
@@ -53,6 +53,22 @@ class Navbar extends React.Component{
 
                 })
             })
+            // const UC = JSON.parse(localStorage.getItem('country'))
+            // if(UC){
+            //     this.setState({
+            //         uc:UC
+            //     })
+            //     console.log(this.state.uc)
+
+            // }
+            // const UN = JSON.parse(localStorage.getItem('name'))
+            // if(UN){
+            //     console.log(UN)
+            // }
+            // const US = JSON.parse(localStorage.getItem('state'))
+            // if(US){
+            //     console.log(US)
+            // }
         }
     Loadcon() {
         // http://api.openweathermap.org/geo/1.0/direct?q=dubai,&limit=5&appid=9413103f25a00a0e82d52d9040e82435
@@ -61,12 +77,9 @@ class Navbar extends React.Component{
             .then(data => {
                 const lati = data[0].lat;
                 const long = data[0].lon;
-                console.log(lati);
-                console.log(long);
                 fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lati}&lon=${long}&appid=9413103f25a00a0e82d52d9040e82435&units=imperial`)
                     .then(response => response.json())
                     .then(data => {
-                        console.log(data);
                         this.setState ({
                                 tempe : data.list[0].main.temp,
                                 feels : data.list[0].main.feels_like,
@@ -97,7 +110,7 @@ class Navbar extends React.Component{
                     <button  onClick = { () => this.Loadcon()} className="ipbt">Search</button>
                     <Resp desc = {this.state.report}/>
                     <Info tempe1={this.state.tempe} feels1 ={this.state.feels} winds1 = {this.state.winds}
-                        gus1 = {this.state.gus} country1 = {this.state.coun}  city1 = {this.state.city}/>
+                        gus1 = {this.state.gus} country1 = {this.state.coun}  city1 = {this.state.city} desc = {this.state.report}/>
                 </div>
             </nav>
         )

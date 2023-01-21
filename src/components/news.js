@@ -18,8 +18,6 @@ class News extends React.Component{
             fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4b411d14e13a431bb655435986a32cc5')
             .then(response => response.json())
             .then(data =>{
-                console.log(data);
-
                 this.setState({
                     headlines:data.articles[0].title,
                     news:data.articles[0].description,

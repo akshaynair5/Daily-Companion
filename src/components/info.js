@@ -3,12 +3,39 @@
 import React from "react";
 import Navbar from './navbar';
 import News from './news';
+import hr from './hr.jpeg'
+import lr from './lr.jpg'
+import sd from './sd.jpg'
 // import './App.css';
 
 class Info extends React.Component{
+    constructor(){
+        super()
+        this.state = {
+            background:null
+        }
+    }
+    componentDidMount(){
+        if(this.props.desc=='light rain'){
+            this.setState({
+                background:lr
+            })
+        }
+        else if(this.props.desc=='rainy'){
+            this.setState({
+                background:hr
+            })
+        }
+        else{
+            this.setState({
+                background:sd
+            })
+        }
+    }
+    
     render(){
         return(
-            <div className="fullinfo">
+            <div className="fullinfo" style={{backgroundImage:`url(${this.state.background})`}}>
 
                 <div className="info">
                     <div className="aa">

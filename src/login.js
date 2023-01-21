@@ -51,9 +51,9 @@ class Logintable extends React.Component{
 
 function Login(){
     const [show,setShow] = useState("hidden")
-    const [name,setName] = useState()
-    const [state,setState] = useState()
-    const [country,setCountry] = useState()
+    const [name,setName] = useState("")
+    const [state,setState] = useState("")
+    const [country,setCountry] = useState("")
     const [email,setEmail] = useState()
     const [password,setPass] = useState()
     const {username,setUsername} = useContext(Username);
@@ -69,6 +69,11 @@ function Login(){
                         setState(response.data[0].state)
                         setCountry(response.data[0].country)
                         setUsername(name)
+                        localStorage.setItem('name',JSON.stringify(name));
+                        localStorage.setItem('state',JSON.stringify(state));
+                        localStorage.setItem('country',JSON.stringify(country));
+
+                        
             })
     }
     return(
