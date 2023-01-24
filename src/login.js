@@ -40,9 +40,11 @@ class Logintable extends React.Component{
                 <input type="email" className="ipem" placeholder="E-mail" onChange={(e)=>{this.setState({email:e.target.value})}}></input>
                 <input type="text" className="ipco" placeholder="Country" onChange={(e)=>{this.setState({country:e.target.value})}}></input>
                 <input type="text" className="ipst" placeholder="State/Province" onChange={(e)=>{this.setState({state:e.target.value})}}></input>
-                <input type="button" onClick={(e) => this.postinfo(e)} value="Sign-Up"></input>
-                <p>Already a member?</p>
-                <Link to='/login' className="link1">click here to login</Link>
+                <input type="button" onClick={(e) => this.postinfo(e)} value="Sign-Up" style={{backgroundColor:'black',fontWeight:'600',color:'white'}}></input>
+                <div className="Navs">
+                    <p>Already a member?</p>
+                    <Link to='/login' className="link1">click here to login</Link>
+                </div>
             </div>
         )
     }
@@ -81,9 +83,11 @@ function Login(){
             <div className="sform">
                 <input type="email" className="ipem" placeholder="email" onChange={(e)=>{setEmail(e.target.value)}}></input>
                 <input type="text" className="ippa" placeholder="Password" onChange={(e)=>{setPass(e.target.value)}}></input>
-                <input type="button" onClick={(e) => validation(e)} value="Sign-Up"></input>
-                <p>Not a member?</p>
-                <Link to='/new/signup' className="link1">click here to Signup</Link>
+                <input type="button" onClick={(e) => validation(e)} value="Sign-Up" style={{backgroundColor:'black',fontWeight:'600',color:'white'}}></input>
+                <div className="Navs">
+                    <p>Not a member?</p>
+                    <Link to='/signup' className="link1" style={{textDecoration:'none'}}>click here to Signup</Link>
+                </div>
                 <Link className="redir" to="/home" style={{color:"white",visibility:show}} value="Sign-Up">Move to home page</Link>
             </div>
         </div>

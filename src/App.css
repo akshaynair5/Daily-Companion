@@ -351,40 +351,49 @@ body{
 .sform{
   position:absolute;
   top:20%;
-  left:30%;
+  left:20%;
   padding:0%;
   background-color: #282c34;
   border-radius: 30px;
-  height:50%
+  height:fit-content;
+  width:60%;
 }
 .sform input{
+  margin-left:5%;
+  margin-top: 2%;
+  margin-bottom: 2% ;
   height: fit-content;
   text-align: center;
-  width:56%;
-  padding:2%;
-  margin:2%;
+  width:90%;
+  padding:1%;
   border-radius: 10px;
+  font-size: 30px;
 }
-.sform .link1{
-  text-decoration: none;
-  position:relative;
-  left:20%;
-  font-size: 120%;
-
+.Navs{
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 30%;
+  font-size: 25px;
+  width: 100%;
+}
+.Navs p{
+  margin-right: 2%;
 }
 
 
 .redir{
   position:absolute;
-  top:77%;
-  left:22%;
+  top:110%;
+  left:30%;
   text-decoration: none;
   /* background-color:aliceblue; */
-  font-size: larger;
+  font-size: 35px;
   color:#282c34;
-  padding: 5%;
+  padding: 3%;
   background-color: dimgrey;
   border-radius: 20px;
+  font-weight: 600;
 }
 
 /* Notes page css */
