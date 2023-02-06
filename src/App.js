@@ -8,7 +8,7 @@ import Register from './pages/register';
 import { Navigate } from 'react-router-dom';
 import { Authcontext } from './project_context/context';
 function App() {
-  const {currentUser} = useContext(Authcontext)
+  const currentUser = useContext(Authcontext)
   const ProtectedRoute = ({children})=>{
     if(!currentUser){
       return(
