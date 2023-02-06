@@ -1,24 +1,33 @@
 import './App.css';
 import Navbar from './components/navbar';
 import React, { useContext } from "react";
-import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
-import {Logintable , Login} from './login.js';
+import { BrowserRouter ,Routes,Route } from 'react-router-dom';
+import Login from './pages/login';
 import Notes from './components/notes';
-import {Username} from './project_context/context'
-import { useState } from 'react';
+import Register from './pages/register';
+import { Navigate } from 'react-router-dom';
+import { Authcontext } from './project_context/context';
 function App() {
-  const [username,setUsername] = useState(Username);
+  const {currentUser} = useContext(Authcontext)
+  const ProtectedRoute = ({children})=>{
+    if(!currentUser){
+      return(
+        <Navigate to="/Daily-Companion"/>
+      )
+    }
+    return(
+      children
+    )
+  }
   return (
-    <Router>
-      <Username.Provider value = {{username,setUsername}}>
-        <Routes>
-            <Route exact path="/home" element={<Navbar />} />
-            <Route exact path="/signup" element={<Logintable />} />
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/notes" element={<Notes />} />
+    <BrowserRouter >
+        <Routes basename='/Daily-Companion'>
+            <Route path="/home" element={<ProtectedRoute><Navbar /></ProtectedRoute>} />
+            <Route path="/register" element={<Register />} />
+            <Route exact path="/Daily-Companion" element={<Login />} />
+            <Route path="/notes" element={<ProtectedRoute><Notes /></ProtectedRoute>} />
         </Routes>
-      </Username.Provider>
-    </Router>
+    </BrowserRouter>
   )
 }
 

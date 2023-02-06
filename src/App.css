@@ -348,27 +348,75 @@ body{
     background-repeat: repeat;
   }
 }
-.sform{
-  position:absolute;
-  top:20%;
-  left:20%;
-  padding:0%;
-  background-color: #282c34;
+.FormBox{
+  position: absolute;
+  left:25%;
+  top:14%;
+  width:40%;
+  background-color: azure;
+  padding: 3%;
+  min-height: 30%;
   border-radius: 30px;
-  height:fit-content;
-  width:60%;
-}
-.sform input{
-  margin-left:5%;
-  margin-top: 2%;
-  margin-bottom: 2% ;
   height: fit-content;
-  text-align: center;
-  width:90%;
-  padding:1%;
-  border-radius: 10px;
-  font-size: 30px;
+  padding-bottom: 1%;
+  transition: 0.5s ease;
 }
+.FormBox:hover{
+  transition: 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 54px 55px, rgba(0, 0, 0, 0.3) 0px -12px 30px, rgba(0, 0, 0, 0.28) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.FormBox form{
+  display: flex;
+  flex-direction: column;
+}
+.FormBox form input{
+  margin:3%;
+  padding: 1%;
+  width: 75%;
+  align-self: center;
+  height: 20%;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: 110%;
+}
+.FormBox form label{
+  margin:3%;
+  padding: 1%;
+  width: 75%;
+  align-self: center;
+  height: 20%;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: 110%;
+  display: flex;
+  font-size: 150%;
+  cursor: pointer;
+}
+.FormBox form p{
+  align-self: center;
+}
+
+.FormBox form input:focus{
+  outline: none;
+}
+.FormBox form #S{
+  width:35%;
+  padding: 2.5%;
+  background-color: #282c34;
+  color: aliceblue;
+  border-radius: 25px;
+  font-weight: 450;
+  transition: 0.3s ease;
+}
+.FormBox form #S:hover{
+  background-color: #000000;
+  transition: 0.3s;
+}
+
 .Navs{
   display: flex;
   flex-wrap: wrap;
