@@ -12,7 +12,7 @@ class Info extends React.Component{
     constructor(){
         super()
         this.state = {
-            background:null
+            background:sd
         }
     }
     componentDidMount(){

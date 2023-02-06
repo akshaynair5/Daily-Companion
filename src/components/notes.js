@@ -1,72 +1,70 @@
-import axios from "axios";
-import React from "react";
+import { setDoc,doc, query, where ,getDocs} from "firebase/firestore";
+import React, { useContext, useEffect } from "react";
 import { Link, Navigate } from 'react-router-dom';
+import { db } from "../firebase_config";
+import { useState } from "react";
+import { Authcontext } from "../project_context/context";
+import { collection} from "firebase/firestore";
 
-class Notes extends React.Component{
-    constructor(){
-        super()
-        this.state = {
-            userid:1,
-            from:null,
-            to:null,
-            usernotes:null,
-            note:null
-        }
-    }
-    saving = async (e) =>{
+function Notes(){
+    const [from,setFrom]= useState('')
+    const [to,setto] = useState('')
+    const [usernotes,setUsernotes] = useState([])
+    const [note,setnote]= useState('')
+    const {currentUser} = useContext(Authcontext)
+    const dbRef = collection(db,"notes")
+    const saving = async (e) =>{
         e.preventDefault();
-        console.log(this.state.note)
         try{
-            await axios.post("http://localhost:3001/savingnotes",{
-                userid:1,
-                note:this.state.note,
-                from:this.state.from,
-                to:this.state.to
-            })
-        } catch(error){
-            console.log(error.response);
+            await setDoc(doc(db,"notes",currentUser.uid),{
+                    
+                uid:currentUser.uid,
+                from:from,
+                to:to,
+                note:note,
+            });
+        } catch(err){
+            console.log(err);
         }
     }
-    componentDidMount(){
-            axios.post("http://localhost:3001/gettingnotes",{
-            userid:this.state.userid
-            }).then(response => {
-                console.log(response.data)
-                    this.setState({
-                        usernotes:response.data
-                    })
-                // this.state.usernotes.map((to,i)=>{
-                //     if(to<timestamp()){
-                //         const temp = this.state.usernotes.splice(i,1)
-                //         this.setState({
-                //             usernotes:temp
-                //         })
-                //     }
-                // })
-            })
-    }
-    render(){
+    useEffect(()=>{
+        const gettingNotes = async()=>{
+            const q=query(dbRef,where("uid","==",currentUser.uid))
+            const querySnapShot = await getDocs(q)
+    
+            try{    
+                querySnapShot.forEach((doc)=>{
+                    setUsernotes(doc.data())
+                })
+            }catch(err){
+                console.log(err)
+            }
+        }
+        gettingNotes()
+    },[])
+
         return(
             <div>
                 <div className="nvbarnotes">
-                    <p className="navbar-brand" ><b>Daily Companion</b></p>
+                    <img src={currentUser.photoURL} style={{height:'50px',width:'50px',borderRadius:'10px'}}></img>
+                    <p className="navbar-brand" style={{position:'absolute',left:'5%'}}><b>{currentUser.displayName}</b></p>
                     <Link to='/home' className="link2" style={{height:"6%"}}>Home</Link>
                     <Link to='/Notes' className="link3" style={{height:"6%"}}>Notes</Link>
                     {/* <input  type="button" value="Logout"></input> */}
                 </div>
-                <div className="notepad">
+                <form className="notepad" onSubmit={(e)=>saving(e)}>
                     {/* <textarea type="text" placeholder="Type your new note here" maxLength={100} onChange={(e)=>this.setState({note:e.target.value})}></textarea> */}
                     <div className="inpform">
-                        <input className="n" placeholder="Remainder" type="text" onChange={(e)=>this.setState({note:e.target.value})} required></input>
-                        <label for="exampleInputEmail1" class="form-label">From</label>
-                        <input type="date" placeholder="Add remainder From?" onChange={(e)=>this.setState({from:e.target.value})} required></input>
-                        <label for="exampleInputEmail1" class="form-label" style={{left:"20%"}}>To</label>
-                        <input type="date" placeholder="Add remainder To?" onChange={(e)=>this.setState({to:e.target.value})} required></input>
-                        <input type="button" value="Add Remainder" onClick={(e)=>this.saving(e)} className="addbtn"></input>
+                        <input className="n" placeholder="Remainder" type="text" onChange={(e)=>setnote(e.target.value)} required></input>
+                        <label >From</label>
+                        <input type="date" placeholder="Add remainder From?" onChange={(e)=>setFrom(e.target.value)} required></input>
+                        <label  style={{left:"20%"}}>To</label>
+                        <input type="date" placeholder="Add remainder To?" onChange={(e)=>setto(e.target.value)} required></input>
+                        <button type="submit" value="Add Remainder" className="addbtn"> Add Note</button>
                     </div>
-                </div>
-                <div className="savednotes" >
-                    {this.state.usernotes?.map(({note,time,from,to})=>(
+                </form>
+                {/* <div className="savednotes" >
+                    {usernotes?.map(({note,time,from,to})=>(
                             <div className="svnt1">
                                 <p>On - {from}</p>
                                 <p>To - {to}</p>
@@ -74,10 +72,9 @@ class Notes extends React.Component{
                                 <p style={{fontsize:"10px"}}>Remainder posted on - {time}</p>
                             </div>
                     ))}
-                </div>
+                </div> */}
             </div>
         )
     }
-}
 
 export default Notes 
