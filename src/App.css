@@ -151,7 +151,7 @@ body{
   background-color: #00000045;
   padding:5%;
   border-radius:40px;
-  width:30%;
+  width:37%;
   position: absolute;
   top:280%;
   display:flex;
@@ -193,20 +193,9 @@ body{
   bottom:5%;
 }
 .news1 a {
-  padding: 10%;
-  text-decoration: none;
+  padding-top: 10%;
 }
-/* .newsmain .news1{
-  margin-left:1%;
-  width:10%;
-  position:absolute;
-  height:200%;
-  border-color:transparent;
-  border-radius: 20px;
-  border-width:4px;
-  transition: 0.7s;
-  border-style:solid;
-} */
+
 .newsmain .news1{
   border-radius: 20px;
   width: 80%;
@@ -227,6 +216,8 @@ body{
 .newsmain .more{
   position: absolute;
   bottom: 0%;
+  padding: 3%;
+  text-align: center;
 }
 .newsmain .news1 img {
   width:25%;
@@ -254,11 +245,11 @@ body{
   width:55%;
   position: absolute;
   left:40%;
-  top:500%;
+  top:480%;
 }
 .newsmain .news1 .more{
     margin-top: 10%;
-    height: 45px;
+    height: 20%;
     position: absolute;
     top:90%;
     width:100%;
@@ -503,6 +494,12 @@ body{
   color:aliceblue;
   background-color: #282c34;
   border-color:antiquewhite;
+  position: absolute;
+  top:110%;
+  left:120%;
+  padding: 10%;
+  width:350%;
+  border-radius: 25px;
 }
 /* .notepad textarea{
   position: absolute;

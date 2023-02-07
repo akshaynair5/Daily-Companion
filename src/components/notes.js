@@ -66,7 +66,7 @@ function Notes(){
                         <input type="date" placeholder="Add remainder From?" onChange={(e)=>setFrom(e.target.value)} required></input>
                         <label  style={{left:"20%"}}>To</label>
                         <input type="date" placeholder="Add remainder To?" onChange={(e)=>setto(e.target.value)} required></input>
-                        <button type="submit" value="Add Remainder" className="addbtn"> Add Note</button>
+                        <button type="submit" value="Add Remainder" className="addbtn" > Add Note</button>
                     </div>
                 </form>
                 <div className="savednotes" >

@@ -12,30 +12,31 @@ class Info extends React.Component{
     constructor(){
         super()
         this.state = {
-            background:sd
+            
         }
     }
     componentDidMount(){
+        console.log(lr)
         if(this.props.desc=='light rain'){
             this.setState({
-                background:lr
+                background:`${lr}`
             })
         }
         else if(this.props.desc=='rainy'){
             this.setState({
-                background:hr
+                background:`${hr}`
             })
         }
         else{
             this.setState({
-                background:sd
+                background:`${sd}`
             })
         }
     }
     
     render(){
         return(
-            <div className="fullinfo" style={{backgroundImage:`url(${this.state.background})`}}>
+            <div className="fullinfo">
 
                 <div className="info">
                     <div className="aa">
