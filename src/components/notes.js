@@ -1,4 +1,4 @@
-import { setDoc,doc, query, where ,getDocs} from "firebase/firestore";
+import { setDoc,doc, query, where ,getDocs, addDoc} from "firebase/firestore";
 import React, { useContext, useEffect } from "react";
 import { Link, Navigate } from 'react-router-dom';
 import { db } from "../firebase_config";
@@ -12,17 +12,20 @@ function Notes(){
     const [usernotes,setUsernotes] = useState([])
     const [note,setnote]= useState('')
     const {currentUser} = useContext(Authcontext)
-    const dbRef = collection(db,"notes")
+    const dbRef = collection(db,"Notes")
     const saving = async (e) =>{
         e.preventDefault();
         try{
-            await setDoc(doc(db,"notes",currentUser.uid),{
-                    
+            // await setDoc(doc(db,"Notes",currentUser.uid),{
+            // });
+            let noteContent  = {
                 uid:currentUser.uid,
                 from:from,
                 to:to,
                 note:note,
-            });
+            }
+            await addDoc(dbRef,noteContent);
+
         } catch(err){
             console.log(err);
         }
@@ -34,7 +37,7 @@ function Notes(){
     
             try{    
                 querySnapShot.forEach((doc)=>{
-                    setUsernotes(doc.data())
+                    setUsernotes((state)=>[...state,doc.data()])
                 })
             }catch(err){
                 console.log(err)
@@ -42,6 +45,9 @@ function Notes(){
         }
         gettingNotes()
     },[])
+    useEffect(()=>{
+        console.log("yessss")
+    },[usernotes])
 
         return(
             <div>
@@ -63,16 +69,16 @@ function Notes(){
                         <button type="submit" value="Add Remainder" className="addbtn"> Add Note</button>
                     </div>
                 </form>
-                {/* <div className="savednotes" >
-                    {usernotes?.map(({note,time,from,to})=>(
+                <div className="savednotes" >
+                    {usernotes?.map((note)=>(
                             <div className="svnt1">
-                                <p>On - {from}</p>
-                                <p>To - {to}</p>
-                                <p style={{color:"black"}}>Remainder: {note}.</p>
-                                <p style={{fontsize:"10px"}}>Remainder posted on - {time}</p>
+                                <p>On - {note.from}</p>
+                                <p>To - {note.to}</p>
+                                <p style={{color:"black"}}>Remainder: {note.note}.</p>
+                                {/* <p style={{fontsize:"10px"}}>Remainder posted on - {note.time}</p> */}
                             </div>
                     ))}
-                </div> */}
+                </div>
             </div>
         )
     }

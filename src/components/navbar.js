@@ -88,6 +88,8 @@ function Navbar(){
                             setgus(data.list[0].wind.gust)
                             setreport(data.list[0].weather[0].description)
                             setmain1(data.list[0].weather[0].main)
+                            setcoun (data.city.country)
+                            setcity ( data.city.name)
                 })
             })
         }
