@@ -8,11 +8,11 @@ to expires
 
 Photos and functioning-
 Home page
-<img width="956" alt="image" src="https://user-images.githubusercontent.com/108605741/213428649-335e95c5-89f3-464c-8c58-077d52fb83ee.png">
+<img width="906" alt="image" src="https://user-images.githubusercontent.com/108605741/217304983-60e4437a-c56b-4c9a-ae4c-0cefe238015c.png">
 
 Notes page
   Adding Notes/Remainders.
-  <img width="960" alt="image" src="https://user-images.githubusercontent.com/108605741/213430125-bf5b472e-192d-4607-bfb7-42363d349131.png">
+  <img width="874" alt="image" src="https://user-images.githubusercontent.com/108605741/217305119-cced4071-8842-4c7f-9fb0-44f4ca7d2365.png">
 
   Added Notes
   <img width="960" alt="image" src="https://user-images.githubusercontent.com/108605741/213430264-138c37fa-9d53-4dcf-baa2-d1938f7bfe9f.png">
