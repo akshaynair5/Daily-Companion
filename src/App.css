@@ -20,7 +20,11 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+::placeholder { 
+  color: black;
+  opacity: 1;
+  font-weight: 500;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -37,7 +41,7 @@
 }
 .link2{
   padding: 0.4%;
-  color:honeydew;
+  color:white;
   font-weight: 1600;
   background-color:#282c348e;
   margin-left:1%;
@@ -52,6 +56,7 @@
   border-color:rgba(255, 255, 255, 0.354);
   text-decoration: none;
   text-align: center;
+  font-weight:500;
   left:10%
 }
 .link2:hover{
@@ -61,7 +66,7 @@
 }
 .link3{
   padding: 0.4%;
-  color:honeydew;
+  color:white;
   font-weight: 1600;
   background-color:#282c348e;
   margin-left:1%;
@@ -76,7 +81,8 @@
   border-color:rgba(255, 255, 255, 0.354);
   text-decoration: none;
   text-align: center;
-  left:18%
+  left:18%;
+  font-weight:500;
 }
 .link3:hover{
   border-color:antiquewhite;
@@ -136,6 +142,7 @@ body{
   transition: 0.7s;
   border-style:solid;
   border-color: #282c34;
+  font-weight: 900;
 }
 .ipbt:hover{
   border-color:antiquewhite;
@@ -160,6 +167,7 @@ body{
   transition: 0.5s ease;
   height: 70%;
   padding-bottom: 2%;
+  padding-top: 3%;
 }
 .info:hover{
   box-shadow: rgb(0, 0, 0) 0px 15px 20px;

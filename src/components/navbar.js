@@ -18,7 +18,6 @@ function Navbar(){
     const [tmax ,settmax ] = useState('')
     const [temp_min,settemp_min] = useState('')
     const [winds,setwinds] = useState('')
-    const [deg,setdeg] = useState('')
     const [gus,setgus] = useState('')
     const [report,setreport] = useState('')
     const [main1,setmain1] = useState('')
@@ -58,10 +57,8 @@ function Navbar(){
                                     settmax  (data.list[0].main.temp_max)
                                     settemp_min (data.list[0].main.temp_min)
                                     setwinds ( data.list[0].wind.speed)
-                                    setdeg (data.list[0].wind.deg)
                                     setgus(data.list[0].wind.gust)
                                     setreport(data.list[0].weather[0].description)
-                                    setmain1(data.list[0].weather[0].main)
                                     setcoun (data.city.country)
                                     setcity ( data.city.name)
 
@@ -85,9 +82,7 @@ function Navbar(){
                             settmax  (data.list[0].main.temp_max)
                             settemp_min (data.list[0].main.temp_min)
                             setwinds ( data.list[0].wind.speed)
-                            setdeg (data.list[0].wind.deg)
                             setgus(data.list[0].wind.gust)
-                            setreport(data.list[0].weather[0].description)
                             setmain1(data.list[0].weather[0].main)
                             setcoun (data.city.country)
                             setcity ( data.city.name)
@@ -103,13 +98,13 @@ function Navbar(){
                     <p className="navbar-brand" style={{position:'absolute',left:'5%'}}><b>{currentUser.displayName}</b></p>
                     <Link to='/home' className="link2">Home</Link>
                     <Link to='/Notes' className="link3">Notes</Link>                
-                    <input className="ipbx" placeholder="Search City" aria-label="Search" id="sbar" onChange={(e) =>setinput(e.target.value)} ></input>
+                    <input className="ipbx" placeholder="Search" aria-label="Search" id="sbar" onChange={(e) =>setinput(e.target.value)} ></input>
                     <button  onClick = { () => Loadcon()} className="ipbt">Search</button>
                     <button onClick={()=>signOut(auth)} className="ipbt" style={{left:"86%"}}>Logout</button>
                 </nav>
                 <Resp desc = {report}/>
                 <Info tempe1={temp} feels1 ={feels} winds1 = {winds}
-                    gus1 = {gus} country1 = {coun}  city1 = {city} desc = {report} tempmin={temp_min} tempmax={tmax}/>
+                    gus1 = {gus} country1 = {coun}  city1 = {city} desc = {report} tempmin={temp_min} tempmax={tmax} humi ={humi}/>
             </>
 
         )

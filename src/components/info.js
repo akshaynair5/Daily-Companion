@@ -47,17 +47,20 @@ class Info extends React.Component{
                         <div className="feelslike" style={{fontSize:'25px'}}>
                             <p><b>Feels Like : </b>{this.props.feels1} ℉</p>
                         </div>
-                        <div className="gust" style={{fontSize:'25px'}}>
-                            <p><b>Max Temperature:   </b>{this.props.tempmax}</p>
+                        <div className="feelslike" style={{fontSize:'25px'}}>
+                            <p><b>Humidity : </b>{this.props.humi} ℉</p>
                         </div>
                         <div className="gust" style={{fontSize:'25px'}}>
-                            <p><b>Min Temperature:   </b>{this.props.tempmin}</p>
+                            <p><b>Max Temperature:   </b>{this.props.tempmax}℉</p>
+                        </div>
+                        <div className="gust" style={{fontSize:'25px'}}>
+                            <p><b>Min Temperature:   </b>{this.props.tempmin}℉</p>
                         </div>
                         <div className="speed" style={{fontSize:'25px'}}>
-                            <p><b>Wind Speed:  </b>{this.props.winds1}</p>
+                            <p><b>Wind Speed:  </b>{this.props.winds1} Mph</p>
                         </div>
                         <div className="gust" style={{fontSize:'25px'}}>
-                            <p><b>Wind Gust:   </b>{this.props.gus1}</p>
+                            <p><b>Wind Gust:   </b>{this.props.gus1} Mph</p>
                         </div>
                     </div>
                 </div>
