@@ -462,27 +462,29 @@ body{
   flex-wrap: wrap;
   margin-top: 2%;
   position: absolute;
-  left:20%;
-  width:60%;
-  height:70%;
+  left:25%;
+  width:50%;
+  height:55%;
   background-color: #282c3472;
 }
 .inpform{
   display: flex;
   flex-direction: column;
   position: absolute;
-  left:8%;
-  top:20%;
+  width:100%;
+  padding: 3%;
 }
 .notepad:hover{
   box-shadow: rgba(0, 0, 0, 0.612) 0px 15px 20px;
   transition: 0.5s ease;
 }
 .inpform input{
-  padding:10%;
-  width:600%;
-  margin: 10%;
+  padding:2%;
+  width:80%;
+  margin: 3%;
   border-radius: 20px;
+  font-size: 30px;
+  align-self: center;
 }
 .inpform input:hover{
   box-shadow: rgba(0, 0, 0, 0.612) 0px 15px 20px;
@@ -494,12 +496,10 @@ body{
   color:aliceblue;
   background-color: #282c34;
   border-color:antiquewhite;
-  position: absolute;
-  top:110%;
-  left:120%;
-  padding: 10%;
-  width:350%;
+  padding: 2%;
+  width:80%;
   border-radius: 25px;
+  align-self: center;
 }
 /* .notepad textarea{
   position: absolute;

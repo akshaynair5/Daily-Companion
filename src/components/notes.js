@@ -1,4 +1,4 @@
-import { setDoc,doc, query, where ,getDocs, addDoc} from "firebase/firestore";
+import { setDoc,doc, query, where ,getDocs, addDoc,deleteDoc} from "firebase/firestore";
 import React, { useContext, useEffect } from "react";
 import { Link, Navigate } from 'react-router-dom';
 import { db } from "../firebase_config";
@@ -7,8 +7,7 @@ import { Authcontext } from "../project_context/context";
 import { collection} from "firebase/firestore";
 
 function Notes(){
-    const [from,setFrom]= useState('')
-    const [to,setto] = useState('')
+    const [Heading,setHeading]= useState('')
     const [usernotes,setUsernotes] = useState([])
     const [note,setnote]= useState('')
     const {currentUser} = useContext(Authcontext)
@@ -20,11 +19,10 @@ function Notes(){
             // });
             let noteContent  = {
                 uid:currentUser.uid,
-                from:from,
-                to:to,
+                Heading:Heading,
                 note:note,
             }
-            await addDoc(dbRef,noteContent);
+            await setDoc(doc(db,"Notes",`${currentUser.uid}${note}`),noteContent);
 
         } catch(err){
             console.log(err);
@@ -34,10 +32,11 @@ function Notes(){
         const gettingNotes = async()=>{
             const q=query(dbRef,where("uid","==",currentUser.uid))
             const querySnapShot = await getDocs(q)
-    
+            const temp=[]
             try{    
                 querySnapShot.forEach((doc)=>{
-                    setUsernotes((state)=>[...state,doc.data()])
+                    temp.push(doc.data())
+                    setUsernotes(temp)
                 })
             }catch(err){
                 console.log(err)
@@ -46,9 +45,12 @@ function Notes(){
         gettingNotes()
     },[])
     useEffect(()=>{
-        console.log("yessss")
+        console.log(usernotes)
     },[usernotes])
-
+    const handleDelete = async(uid,note)=>{
+        await deleteDoc(doc(db, "Notes", `${uid}${note}`))
+        console.log("Hi")
+    }
         return(
             <div>
                 <div className="nvbarnotes">
@@ -61,19 +63,18 @@ function Notes(){
                 <form className="notepad" onSubmit={(e)=>saving(e)}>
                     {/* <textarea type="text" placeholder="Type your new note here" maxLength={100} onChange={(e)=>this.setState({note:e.target.value})}></textarea> */}
                     <div className="inpform">
+                        <label style={{alignSelf:'center',fontSize:'25px'}}>Note Heading</label>
+                        <input type="text" placeholder="Heading?" onChange={(e)=>setHeading(e.target.value)} required></input>
                         <input className="n" placeholder="Remainder" type="text" onChange={(e)=>setnote(e.target.value)} required></input>
-                        <label >From</label>
-                        <input type="date" placeholder="Add remainder From?" onChange={(e)=>setFrom(e.target.value)} required></input>
-                        <label  style={{left:"20%"}}>To</label>
-                        <input type="date" placeholder="Add remainder To?" onChange={(e)=>setto(e.target.value)} required></input>
+
                         <button type="submit" value="Add Remainder" className="addbtn" > Add Note</button>
                     </div>
                 </form>
                 <div className="savednotes" >
                     {usernotes?.map((note)=>(
                             <div className="svnt1">
-                                <p>On - {note.from}</p>
-                                <p>To - {note.to}</p>
+                                <button className="delete" onClick={()=>handleDelete(note.uid,note.note)}>Delete</button>
+                                <p style={{fontWeight:'750',size:'30px'}}>{note.Heading}</p>
                                 <p style={{color:"black"}}>Remainder: {note.note}.</p>
                                 {/* <p style={{fontsize:"10px"}}>Remainder posted on - {note.time}</p> */}
                             </div>
