@@ -66,19 +66,18 @@ function Notes(){
                 <form className="notepad" onSubmit={(e)=>saving(e)}>
                     {/* <textarea type="text" placeholder="Type your new note here" maxLength={100} onChange={(e)=>this.setState({note:e.target.value})}></textarea> */}
                     <div className="inpform">
-                        <label style={{alignSelf:'center',fontSize:'25px'}}>Note Heading</label>
-                        <input type="text" placeholder="Heading?" onChange={(e)=>setHeading(e.target.value)} required></input>
+                        <label style={{alignSelf:'center',fontSize:'25px'}}>Add a Note!</label>
+                        <input type="text" placeholder="Heading" onChange={(e)=>setHeading(e.target.value)} required></input>
                         <input className="n" placeholder="Remainder" type="text" onChange={(e)=>setnote(e.target.value)} required></input>
-
                         <button type="submit" value="Add Remainder" className="addbtn" > Add Note</button>
                     </div>
                 </form>
                 <div className="savednotes" >
                     {usernotes?.map((note)=>(
                             <div className="svnt1">
-                                <button className="delete" onClick={()=>handleDelete(note.uid,note.note)}>Delete</button>
+                                <button type="submit" className="delete" onClick={()=>handleDelete(note.uid,note.note)} style={{position:'relative',backgroundColor:'transparent',border:'none',left:'90%',fontWeight:'1000'}}>X</button>
                                 <p style={{fontWeight:'750',size:'30px'}}>{note.Heading}</p>
-                                <p style={{color:"black"}}>Remainder: {note.note}.</p>
+                                <p style={{color:"black",fontSize:'25px'}}>{note.note}.</p>
                                 {/* <p style={{fontsize:"10px"}}>Remainder posted on - {note.time}</p> */}
                             </div>
                     ))}

@@ -4,7 +4,7 @@ import App from "../App";
 import Info from "./info";
 import Resp from "./resp"
 import { Authcontext } from "../project_context/context";
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase_config";
 import { collection, query, where } from "firebase/firestore";
@@ -20,13 +20,13 @@ function Navbar(){
     const [winds,setwinds] = useState('')
     const [gus,setgus] = useState('')
     const [report,setreport] = useState('')
-    const [main1,setmain1] = useState('')
     const [coun,setcoun] = useState('')
     const [city,setcity] = useState('')
     const [input,setinput] = useState('')
     const[userInfo,setUserInfo]=useState('')
     const usersRef = collection(db, "users");
     const {currentUser} = useContext(Authcontext)
+    const navigate = useNavigate()
     useEffect(()=>{
         async function Fetchdata() {
             const q = query(usersRef, where("uid", "==", currentUser.uid))
@@ -40,7 +40,6 @@ function Navbar(){
             }
         }
         Fetchdata()
-        console.log("podi")
     },[])
     useEffect(()=>{
         fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${userInfo.state},&limit=5&appid=9413103f25a00a0e82d52d9040e82435`)
@@ -83,13 +82,15 @@ function Navbar(){
                             settemp_min (data.list[0].main.temp_min)
                             setwinds ( data.list[0].wind.speed)
                             setgus(data.list[0].wind.gust)
-                            setmain1(data.list[0].weather[0].main)
                             setcoun (data.city.country)
                             setcity ( data.city.name)
                 })
             })
         }
-
+        const signout=()=>{
+            navigate("/Daily-Companion")
+            signOut(auth)
+        }
         return( 
             <>
                 <nav className="navbar" style={{marginLeft:'0.6%'}}>
@@ -100,7 +101,7 @@ function Navbar(){
                     <Link to='/Notes' className="link3">Notes</Link>                
                     <input className="ipbx" placeholder="Search" aria-label="Search" id="sbar" onChange={(e) =>setinput(e.target.value)} ></input>
                     <button  onClick = { () => Loadcon()} className="ipbt">Search</button>
-                    <button onClick={()=>signOut(auth)} className="ipbt" style={{left:"86%"}}>Logout</button>
+                    <button onClick={()=>{signout()}} className="ipbt" style={{left:"86%"}}>Logout</button>
                 </nav>
                 <Resp desc = {report}/>
                 <Info tempe1={temp} feels1 ={feels} winds1 = {winds}

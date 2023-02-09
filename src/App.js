@@ -13,7 +13,7 @@ function App() {
     if(!currentUser){
       return(
         <Navigate to="/Daily-Companion"/>
-      )
+      ) 
     }
     return(
       children

@@ -203,6 +203,7 @@ body{
   align-content: center;
   padding: 3%;
   background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.715) 0px 15px 20px;
 }
 .news1 a {
   padding-top: 10%;
@@ -346,8 +347,8 @@ body{
 }
 .FormBox{
   position: absolute;
-  left:25%;
-  top:14%;
+  left:30%;
+  top:17%;
   width:40%;
   background-color: azure;
   padding: 3%;
@@ -391,6 +392,7 @@ body{
   display: flex;
   font-size: 150%;
   cursor: pointer;
+  color: #000000;
 }
 .FormBox form p{
   align-self: center;
@@ -456,6 +458,7 @@ body{
   width:30%;
   height:43%;
   background-color: #282c3472;
+  box-shadow: rgba(0, 0, 0, 0.412) 0px 15px 20px;
 }
 .inpform{
   display: flex;
@@ -465,7 +468,7 @@ body{
   padding: 3%;
 }
 .notepad:hover{
-  box-shadow: rgba(0, 0, 0, 0.612) 0px 15px 20px;
+  box-shadow: rgba(0, 0, 0, 0.712) 0px 15px 20px;
   transition: 0.5s ease;
 }
 .inpform input{
@@ -473,7 +476,7 @@ body{
   width:80%;
   margin: 3%;
   border-radius: 20px;
-  font-size: 30px;
+  font-size: 25px;
   align-self: center;
 }
 .inpform input:hover{
@@ -504,6 +507,11 @@ body{
   border-radius: 30px;
   height: 85%;
   overflow-y: scroll;
+  box-shadow: rgba(0, 0, 0, 0.412) 0px 15px 20px;
+}
+.savednotes:hover{
+  box-shadow: rgba(0, 0, 0, 0.712) 0px 15px 20px;
+  transition: 0.5s ease;
 }
 * {
   scrollbar-width: thin;
@@ -534,6 +542,8 @@ body{
   margin: 1%;
   width:30%;
   word-wrap: break-word;
+  height: fit-content;
+  min-height: 40%;
 }
 .savednotes .svnt1:hover{
   box-shadow: rgba(0, 0, 0, 0.612) 0px 15px 20px;
