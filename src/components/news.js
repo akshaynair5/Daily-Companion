@@ -48,16 +48,14 @@ class News extends React.Component{
     }
     render(){
         return(
-            <div className="newsmain" >
+            <div className="newsmain" style={{backgroundImage:`url(${this.state.imgurl})`}} >
                 {/* <button onClick={() => this.getnews()} >Get Latest News</button> */}
-                <div className="news1" style={{backgroundImage:`url(${this.state.imgurl})`,height:'fit-content'}}>
-                    <div className="newsdiv" style={{backgroundColor:'rgba(0, 0, 0, 0.564)',padding:'8%',backgroundSize:'contain',borderRadius:'25px'}}>
-                        <p className="headline"><b>{this.state.headlines}</b></p>
-                        <p className="newss">{this.state.news}</p>
-                        <a href = {this.state.url} style={{color:'white'}}>Read More</a>
-                    </div>
-                    <button onClick = {() => this.getmore()} className="more">More News - </button>
+                <div className="newsdiv" style={{backgroundColor:'rgba(0, 0, 0, 0.564)',padding:'8%',backgroundSize:'contain',borderRadius:'25px'}}>
+                    <p className="headline" style={{fontSize:'38px',fontWeight:'700'}}><b>{this.state.headlines}</b></p>
+                    <p className="newss" style={{fontSize:'20px',fontWeight:'700'}}>{this.state.news}</p>
+                    <a href = {this.state.url} style={{color:'white'}}>Read More</a>
                 </div>
+                <button onClick = {() => this.getmore()} className="more">More News - </button>
             </div>
         )
     }

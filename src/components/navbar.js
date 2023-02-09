@@ -41,6 +41,7 @@ function Navbar(){
             }
         }
         Fetchdata()
+        console.log("podi")
     },[])
     useEffect(()=>{
         fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${userInfo.state},&limit=5&appid=9413103f25a00a0e82d52d9040e82435`)
@@ -95,22 +96,22 @@ function Navbar(){
         }
 
         return( 
-            <nav className="navbar">
-                <div className="container-fluid" style={{display:'flex'}}>
+            <>
+                <nav className="navbar" style={{marginLeft:'0.6%'}}>
                     {/* <Loadname/> */}
                     <img src={currentUser.photoURL} style={{height:'50px',width:'50px',borderRadius:'10px'}}></img>
                     <p className="navbar-brand" style={{position:'absolute',left:'5%'}}><b>{currentUser.displayName}</b></p>
                     <Link to='/home' className="link2">Home</Link>
-                    <Link to='/Notes' className="link3">Notes</Link>
-                    
+                    <Link to='/Notes' className="link3">Notes</Link>                
                     <input className="ipbx" placeholder="Search City" aria-label="Search" id="sbar" onChange={(e) =>setinput(e.target.value)} ></input>
                     <button  onClick = { () => Loadcon()} className="ipbt">Search</button>
                     <button onClick={()=>signOut(auth)} className="ipbt" style={{left:"86%"}}>Logout</button>
-                    <Resp desc = {report}/>
-                    <Info tempe1={temp} feels1 ={feels} winds1 = {winds}
-                        gus1 = {gus} country1 = {coun}  city1 = {city} desc = {report}/>
-                </div>
-            </nav>
+                </nav>
+                <Resp desc = {report}/>
+                <Info tempe1={temp} feels1 ={feels} winds1 = {winds}
+                    gus1 = {gus} country1 = {coun}  city1 = {city} desc = {report} tempmin={temp_min} tempmax={tmax}/>
+            </>
+
         )
 }
 export default Navbar 

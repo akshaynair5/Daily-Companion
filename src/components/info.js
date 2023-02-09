@@ -16,7 +16,6 @@ class Info extends React.Component{
         }
     }
     componentDidMount(){
-        console.log(lr)
         if(this.props.desc=='light rain'){
             this.setState({
                 background:`${lr}`
@@ -37,27 +36,27 @@ class Info extends React.Component{
     render(){
         return(
             <div className="fullinfo">
-
-                <div className="info">
-                    <div className="aa">
-                        <div className="temp">
+                <div className="info" style={{backgroundImage:`url(${this.state.background})`,backgroundSize:'cover'}}>
+                    <div className="WeatherContent" style={{backgroundColor:'rgba(0, 0, 0, 0.464)',paddingLeft:'12%',borderRadius:'25px'}}>
+                        <div className="temp" style={{fontSize:'100px'}}>
                             <p><b>{this.props.tempe1}</b>℉</p>
                         </div>
-                        <div className='country'>
+                        <div className='country' style={{fontSize:'20px'}}>
                             <p><b>{this.props.city1} , {this.props.country1} </b></p>
                         </div>
-                    </div>
-                    <div className="feelslike">
-                        <p><b>Feels Like : </b>{this.props.feels1} ℉</p>
-                    </div>
-                    <div className="nwea">
-                        <p> </p>
-                    </div>
-                    <div className="wind">
-                        <div className="speed">
+                        <div className="feelslike" style={{fontSize:'25px'}}>
+                            <p><b>Feels Like : </b>{this.props.feels1} ℉</p>
+                        </div>
+                        <div className="gust" style={{fontSize:'25px'}}>
+                            <p><b>Max Temperature:   </b>{this.props.tempmax}</p>
+                        </div>
+                        <div className="gust" style={{fontSize:'25px'}}>
+                            <p><b>Min Temperature:   </b>{this.props.tempmin}</p>
+                        </div>
+                        <div className="speed" style={{fontSize:'25px'}}>
                             <p><b>Wind Speed:  </b>{this.props.winds1}</p>
                         </div>
-                        <div className="gust">
+                        <div className="gust" style={{fontSize:'25px'}}>
                             <p><b>Wind Gust:   </b>{this.props.gus1}</p>
                         </div>
                     </div>

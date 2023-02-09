@@ -147,18 +147,19 @@ body{
 }
 .info{
   position: absolute;
-  top:35%;
+  top:20%;
   background-color: #00000045;
-  padding:5%;
+  padding:4%;
   border-radius:40px;
   width:37%;
   position: absolute;
-  top:280%;
   display:flex;
   flex-wrap: wrap;
   flex-direction: column;
   box-shadow: rgba(0, 0, 0, 0.715) 0px 15px 20px;
   transition: 0.5s ease;
+  height: 70%;
+  padding-bottom: 2%;
 }
 .info:hover{
   box-shadow: rgb(0, 0, 0) 0px 15px 20px;
@@ -169,28 +170,31 @@ body{
   flex-direction: row;
   
 }
-.info .temp p{
+/* .info .temp p{
   font-size: 450%;
 }
 .info .aa{
   display:flex;
   flex-direction: column;
   margin-right:10%;
-}
+} */
 .newsmain{
-  width:55%;
+  width:50%;
   position: absolute;
-  left:40%;
-  top:280%;
+  left:44%;
+  top:20%;
   display:flex;
   flex-wrap: wrap;
   flex-direction: row;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.564);
-  height:fit-content;
+  height: 70%;
   border-radius:30px;
   margin-right:5%;
   bottom:5%;
+  align-content: center;
+  padding: 3%;
+  background-size: cover;
 }
 .news1 a {
   padding-top: 10%;
@@ -200,16 +204,14 @@ body{
   border-radius: 20px;
   width: 80%;
   position: absolute;
-  top:25%;
-  left:10%;
   background-color: rgba(0, 0, 0, 0.386);
-  height:auto;
+  height:80%;
   padding:5%;
   font-size: larger;
   box-shadow: rgba(0, 0, 0, 0.715) 0px 15px 20px;
   transition: 0.5s ease;
 }
-.newsmain .news1:hover{
+.newsmain:hover{
   box-shadow: rgb(0, 0, 0) 0px 15px 20px;
   transition: 0.5s ease;
 }
@@ -227,9 +229,9 @@ body{
   background-color: rgba(0, 0, 0, 0.322);
   position: absolute;
   left:5%;
-  width:85%;
-  height: 100%;
-  top:150%;
+  width:89%;
+  height: 8%;
+  top:10%;
   padding:1%;
   border-radius: 30px;
   font-size: 20px;
@@ -241,24 +243,19 @@ body{
   box-shadow: rgba(0, 0, 0, 0.612) 0px 15px 20px;
   transition: 0.5s ease;
 }
-.more {
-  width:55%;
-  position: absolute;
-  left:40%;
-  top:480%;
-}
-.newsmain .news1 .more{
-    margin-top: 10%;
-    height: 20%;
-    position: absolute;
-    top:90%;
-    width:100%;
-    left:0%;
+
+.newsmain .more{
+    height: 15%;
+    margin-bottom: 1%;
+    font-size: 25px;
+    width:90%;
     border-color: #282c34;
     background-color: #282c34;
     border-radius: 20px;
     color:aliceblue;
     font-weight: 700;
+    text-align: center;
+    align-self: center;
 }
 @media all and (max-width:385px){
   .resp1{
@@ -436,35 +433,20 @@ body{
 }
 
 /* Notes page css */
-
-
-.nvbarnotes{
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #282c3400;
-  margin-top: 1%;
-  height: 80px;
-  border-radius: 20px;
+.Notes{
+  height: 100%;
+  width: 100%;
+  position: fixed;
 }
-.nvbarnotes input{
-  position: absolute;
-  right:2%;
-  top:4%;
-  background-color: aliceblue;
-  color:black;
-  height: 6%;
-  border-radius: 20px;
-  font-weight: 800;
-}
-.notepad{
+.Notes .notepad{
   border-radius: 30px;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 2%;
+  top:10%;
   position: absolute;
-  left:25%;
-  width:50%;
-  height:55%;
+  left:5%;
+  width:30%;
+  height:43%;
   background-color: #282c3472;
 }
 .inpform{
@@ -501,24 +483,37 @@ body{
   border-radius: 25px;
   align-self: center;
 }
-/* .notepad textarea{
-  position: absolute;
-  top:5%;
-  left:5%;
-  width:90%;
-  height:90%;
-  background-color: crimson;
-  font-size: 50px;
-  text-align:justify;
-} */
 .savednotes{
   display: flex;
   flex-wrap: wrap;
   position: absolute;
-  top:90%;
-  width: 100%;
-  background-color: #282c3400;
+  width: 58%;
+  left:40%;
+  top:10%;
+  background-color: #282c3472;
+  padding: 1%;
   height:fit-content;
+  border-radius: 30px;
+  height: 85%;
+  overflow-y: scroll;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: black;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 20px;
 }
 .savednotes .svnt1{
   font-family: 'Dancing Script', cursive;
