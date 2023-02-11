@@ -61,7 +61,7 @@ function Notes(){
                     <Link to='/home' className="link2" >Home</Link>
                     <Link to='/Notes' className="link3" >Notes</Link>
                     {/* <input  type="button" value="Logout"></input> */}
-                    <button onClick={()=>signOut(auth)} className="ipbt" style={{left:"86%"}}>Logout</button>
+                    <button onClick={()=>signOut(auth)} className="ipbt" style={{left:"86%",backgroundColor:"red"}}>Logout</button>
                 </div>
                 <form className="notepad" onSubmit={(e)=>saving(e)}>
                     {/* <textarea type="text" placeholder="Type your new note here" maxLength={100} onChange={(e)=>this.setState({note:e.target.value})}></textarea> */}

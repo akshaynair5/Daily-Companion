@@ -101,7 +101,7 @@ function Navbar(){
                     <Link to='/Notes' className="link3">Notes</Link>                
                     <input className="ipbx" placeholder="Search" aria-label="Search" id="sbar" onChange={(e) =>setinput(e.target.value)} ></input>
                     <button  onClick = { () => Loadcon()} className="ipbt">Search</button>
-                    <button onClick={()=>{signout()}} className="ipbt" style={{left:"86%"}}>Logout</button>
+                    <button onClick={()=>{signout()}} className="ipbt" style={{left:"86%",backgroundColor:"red"}}>Logout</button>
                 </nav>
                 <Resp desc = {report}/>
                 <Info tempe1={temp} feels1 ={feels} winds1 = {winds}
