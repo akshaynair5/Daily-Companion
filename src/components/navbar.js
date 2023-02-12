@@ -92,11 +92,11 @@ function Navbar(){
             signOut(auth)
         }
         return( 
-            <>
+            <div className="home">
                 <nav className="navbar" style={{marginLeft:'0.6%'}}>
                     {/* <Loadname/> */}
-                    <img src={currentUser.photoURL} style={{height:'50px',width:'50px',borderRadius:'10px'}}></img>
-                    <p className="navbar-brand" style={{position:'absolute',left:'5%'}}><b>{currentUser.displayName}</b></p>
+                    <img src={currentUser.photoURL} ></img>
+                    <p className="navbar-brand" ><b>{currentUser.displayName}</b></p>
                     <Link to='/home' className="link2">Home</Link>
                     <Link to='/Notes' className="link3">Notes</Link>                
                     <input className="ipbx" placeholder="Search" aria-label="Search" id="sbar" onChange={(e) =>setinput(e.target.value)} ></input>
@@ -106,7 +106,7 @@ function Navbar(){
                 <Resp desc = {report}/>
                 <Info tempe1={temp} feels1 ={feels} winds1 = {winds}
                     gus1 = {gus} country1 = {coun}  city1 = {city} desc = {report} tempmin={temp_min} tempmax={tmax} humi ={humi}/>
-            </>
+            </div>
 
         )
 }

@@ -266,85 +266,7 @@ body{
     text-align: center;
     align-self: center;
 }
-@media all and (max-width:385px){
-  .resp1{
-    padding: 0% ;
-  }
-  .fullinfo .info{
-    top:360%;
-    width:80%;
-    left:10%;
-  }
-  .newsmain{
-    top:850%;
-    width:100%;
-    left: 0%;
-  }
-  .resp1{
-    width:80%;
-    left:10%;
-    padding: 5%;
-    height: auto;
-  }
-  .navbar .ipbx{
-    top:65%;
-    width:65%;
-    left:10%;
-  }
-  .navbar .ipbt{
-    top:65%;
-    width:fit-content;
-  }
-  body{
-    background-image: url('fe47cd468898543d6b66b0285db095a7.jpg');
-    background-repeat: repeat;
-  }
-}
-@media all and (min-width:385px) and (max-width:450px){
-  .link2{
-    padding: 1%;
-    width:20%;
-    left:50%;
-  }
-  .link3{
-    padding: 1%;
-    width:20%;
-    left:75%;
-  }
-  .resp1{
-    padding: 0% ;
-  }
-  .fullinfo .info{
-    top:380%;
-    width:80%;
-    left:10%;
-  }
-  .newsmain{
-    top:880%;
-    width:100%;
-    left: 0%;
-  }
-  .resp1{
-    top:200%;
-    width:80%;
-    left:10%;
-    padding: 5%;
-    height: auto;
-  }
-  .navbar .ipbx{
-    top:115%;
-    width:65%;
-    left:10%;
-  }
-  .navbar .ipbt{
-    top:115%; 
-    width:fit-content;
-  }
-  body{
-    background-image: url('blurred-texture-background03-preview.jpg');
-    background-repeat: repeat;
-  }
-}
+
 .FormBox{
   position: absolute;
   left:30%;
@@ -532,6 +454,12 @@ body{
   background-color: black;
   border-radius: 20px;
 }
+.fullinfo .info .WeatherContent{
+  font-size: 25px;
+}
+.country{
+  font-size: 20px;
+}
 .savednotes .svnt1{
   font-family: 'Dancing Script', cursive;
   font-family: 'Dosis', sans-serif;
@@ -550,92 +478,37 @@ body{
   box-shadow: rgba(0, 0, 0, 0.612) 0px 15px 20px;
   transition: 0.5s ease;
 }
-
-@media all and (min-width:385px) and (max-width:450px){
-  body{
-    background-size:auto;
-    background-repeat: no-repeat;
-  }
-  .notepad{
-    border-radius: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 2%;
-    position: absolute;
-    left:20%;
-    width:230%;
-    height:200%;
-    background-color: #282c3472;
-  }
-  .inpform{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    left:8%;
-    top:20%;
-    right: 10%;
-  }
-  .notepad:hover{
-    box-shadow: rgba(0, 0, 0, 0.612) 0px 15px 20px;
-    transition: 0.5s ease;
-  }
-  .inpform input{
-    padding:10%;
-    width:60%;
-    margin: 10%;
-    border-radius: 20px;
-  }
-  .inpform input:hover{
-    box-shadow: rgba(0, 0, 0, 0.612) 0px 15px 20px;
-    transition: 0.5s ease;
-  }
-  .inpform .addbtn{
-    font-weight: 800;
-    font-size: 25px;
-    color:aliceblue;
-    background-color: #282c34;
-    border-color:antiquewhite;
-  }
-  .savednotes{
-    display: flex;
-    flex-wrap: wrap;
-    position: absolute;
-    top:240%;
-    width: 100%;
-    background-color: #282c3400;
-    height:fit-content;
-  }
-  .savednotes .svnt1{
-    font-family: 'Dancing Script', cursive;
-    font-family: 'Dosis', sans-serif;
-    font-family: 'Raleway', sans-serif;
-    font-size: 30px;
-    background-color: rgba(255, 255, 255, 0.477);
-    border-radius: 30px;
-    padding: 1%;
-    margin: 1%;
-    width:30%;
-    word-wrap: break-word;
-  }
-  .savednotes .svnt1:hover{
-    box-shadow: rgba(0, 0, 0, 0.612) 0px 15px 20px;
-    transition: 0.5s ease;
-  }
+.temp{
+  font-size:100px
 }
-
-
-
-
+.headline{
+  font-size: 38px;
+  font-weight: 700;
+}
+.newss{
+  font-size: 20px;
+  font-weight: 700;
+}
+nav .navbar-brand{
+  left:5%;
+  position: absolute;
+}
+nav img{
+  top:0%;
+  height:50px;
+  width:50px;
+  border-radius:10px;
+}
 @media all and (min-width:450px) and (max-width:950px){
 
   .fullinfo .info{
-    top:370%;
+    top:30%;
     width:80%;
     left:10%;
     font-size: 22px;
   }
   .newsmain{
-    top:1100%;
+    top:10%;
     width:100%;
     left: 0%;
     font-size: 20px;
@@ -685,5 +558,145 @@ body{
     font-size: 120%;
   
   }
+
+  /* Home page css */
+
 }
  
+@media only screen and (min-width:400px) and (max-width:720px){
+  .FormBox{
+    left:15%;
+    top:14%;
+    width:70%;
+    padding: 2%;
+  }
+  .FormBox form input{
+    margin:7%;
+    padding: 2%;
+  }
+  .FormBox form label{
+    margin:3%;
+    padding: 1%;
+
+  }
+  .FormBox form #S{
+    width:55%;
+    padding: 4%;
+    background-color: #282c34;
+    color: aliceblue;
+    border-radius: 25px;
+  }
+  
+}
+@media only screen and (max-width:400px){
+  body{
+    background-image: none;
+    background-color: #282c34;
+  }
+  .FormBox{
+    left:15%;
+    top:14%;
+    width:70%;
+    padding: 2%;
+  }
+  .FormBox form input{
+    margin:7%;
+    padding: 2%;
+  }
+  .FormBox form label{
+    margin:3%;
+    padding: 1%;
+
+  }
+  .FormBox form #S{
+    
+    width:55%;
+    padding: 4%;
+    background-color: #282c34;
+    color: aliceblue;
+    border-radius: 25px;
+  }
+  
+  /* navbar css.. */
+  .home nav{
+    top: 20%;
+    height: 100px;
+    /* background-color: #000000; */
+    width: 100%;
+  }
+  nav .link2{
+    width:40%;
+    top:50%;
+    left: 5%;
+    height: 37%;
+  }
+  nav img{
+    height: 30px;
+    width: 30px;
+  }
+  nav .link3{
+    width:40%;
+    top:50%;
+    left: 55%;
+    height: 37%;
+  }
+  nav .ipbx{
+    height: 30%;
+    top:10%;
+    left:35%;
+    width:45%;
+  }
+  nav .navbar-brand{
+    top:0%;
+    left:10%;
+    position: absolute;
+  }
+
+
+  /* weather updates css and news css */
+  .resp1{
+    font-size: 10px;
+    text-align: center;
+    padding: 5.5%;
+    width:95%;
+    top:12%;
+  }
+  .fullinfo .info{
+    left:5%;
+    width:95%;
+    top:22%;
+    height: 40%;
+  }
+  .fullinfo .info .WeatherContent{
+    width:95%;
+    font-size: 8px;
+    height: 100%;
+    align-self: center;
+  }
+  .fullinfo .info .WeatherContent .temp{
+    font-size: 40px;
+  }
+  .fullinfo .info .WeatherContent .country{
+    font-size: 7px;
+  }
+  .newsmain{
+    width: 95%;
+    left:5%;
+    top:65%;
+    height: 35%;
+  }
+  .newsmain .more{
+    left: 50%;
+    width: 35%;
+    top:75%;
+    font-size: small;
+  }
+  .headline{
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .newss{
+    font-size: 12px;
+    font-weight: 700;
+  }
+}
