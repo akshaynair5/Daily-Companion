@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Daily-Companion/static/css/main.a9350285.css",
+    "main.js": "/Daily-Companion/static/js/main.6ccccec7.js",
+    "static/js/787.d9312eb8.chunk.js": "/Daily-Companion/static/js/787.d9312eb8.chunk.js",
+    "static/media/lr.jpg": "/Daily-Companion/static/media/lr.b6866c530df9daacc3b0.jpg",
+    "static/media/jpg": "/Daily-Companion/static/media/fe47cd468898543d6b66b0285db095a7.ec0c1b50cea5729c12ec.jpg",
+    "static/media/QvC7Gw.jpg": "/Daily-Companion/static/media/QvC7Gw.e56106d4566a40902c39.jpg",
+    "static/media/hr.jpeg": "/Daily-Companion/static/media/hr.bb64c4ef31648b19dee5.jpeg",
+    "static/media/blurred-texture-background03-preview.jpg": "/Daily-Companion/static/media/blurred-texture-background03-preview.111246bbc66eb40819c7.jpg",
+    "static/media/sd.jpg": "/Daily-Companion/static/media/sd.56c586a4e27fbedd9a79.jpg",
+    "static/media/user.png": "/Daily-Companion/static/media/user.38b097360cd1024e4462.png",
+    "static/media/wp2445768.webp": "/Daily-Companion/static/media/wp2445768.3f299ae3c80db1fc05e2.webp",
+    "index.html": "/Daily-Companion/index.html",
+    "main.a9350285.css.map": "/Daily-Companion/static/css/main.a9350285.css.map",
+    "main.6ccccec7.js.map": "/Daily-Companion/static/js/main.6ccccec7.js.map",
+    "787.d9312eb8.chunk.js.map": "/Daily-Companion/static/js/787.d9312eb8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a9350285.css",
+    "static/js/main.6ccccec7.js"
+  ]
+}
