@@ -20,15 +20,17 @@ function Login(){
 
     }
     return(
-        <div className="FormBox" onSubmit={(e)=>HandleSubmit(e)}>
-            <form>
-                <input type="email" placeholder="Email"></input>
-                <input type="password" placeholder="Password"></input>
-                <input type="submit" id="S"></input>
-                {err && <span style={{alignSelf:'center'}}><b>Username or Password is wrong, Try Again!</b></span>}
-                <p style={{width:'34%',color:'black'}}>Do not have an Account?<b><Link style={{marginLeft:'2%',textDecoration:'none'}} to="/register">Register Now</Link></b></p>
-            </form>
-        </div>
+        <>
+            <div className="FormBox" onSubmit={(e)=>HandleSubmit(e)}>
+                <form>
+                    <input type="email" placeholder="Email"></input>
+                    <input type="password" placeholder="Password"></input>
+                    <input type="submit" id="S"></input>
+                    {err && <span style={{alignSelf:'center'}}><b>Username or Password is wrong, Try Again!</b></span>}
+                    <p style={{width:'34%',color:'black'}}>Do not have an Account?<b><Link style={{marginLeft:'2%',textDecoration:'none'}} to="/register">Register Now</Link></b></p>
+                </form>
+            </div>
+        </>
     )
 }
 
