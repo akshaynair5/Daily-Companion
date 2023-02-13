@@ -152,6 +152,47 @@ body{
 .ipbx:hover{
   border-color:beige
 }
+.ipbx{
+  width:50%;
+  position:absolute;
+  left:30%;
+  height:70%;
+  border-width:4px;
+  border-color: transparent;
+  border-radius: 20px;
+  transition: 0.7s;
+  border-style:solid;
+  border-color: #282c34;
+  text-align: center;
+  font-weight: 500;
+  font-size: larger;
+  background-color: transparent;
+  color:white;
+}
+
+.iplo{
+  margin-left:1%;
+  width:5%;
+  position:absolute;
+  left:86%;
+  height:70%;
+  border-color:transparent;
+  border-radius: 20px;
+  border-width:4px;
+  transition: 0.7s;
+  border-style:solid;
+  border-color: #282c34;
+  font-weight: 900;
+  background-color: red;
+}
+.iplo:hover{
+  border-color:antiquewhite;
+  background-color: black;
+  color:white;
+}
+.iplo:hover{
+  border-color:beige
+}
 .info{
   position: absolute;
   top:20%;
@@ -626,29 +667,46 @@ nav img{
   }
   nav .link2{
     width:40%;
-    top:50%;
+    top:100%;
     left: 5%;
     height: 37%;
   }
   nav img{
     height: 30px;
     width: 30px;
+    position: absolute;
+    top: 7%;
   }
   nav .link3{
     width:40%;
-    top:50%;
+    top:100%;
     left: 55%;
     height: 37%;
   }
   nav .ipbx{
-    height: 30%;
-    top:10%;
-    left:35%;
-    width:45%;
+    height: 40%;
+    top:50%;
+    left:5%;
+    width:70%;
+    border-color:beige;
+  }
+  .ipbt{
+    top:50%;
+    min-width:15%;
+    width: fit-content;
+    height: 40%;
+    left:77%;
+  }
+  .iplo{
+    min-width:15%;
+    width: fit-content;
+    height: 40%;
+    top: 3%;
+    left: 77%;
   }
   nav .navbar-brand{
     top:0%;
-    left:10%;
+    left:13%;
     position: absolute;
   }
 
@@ -659,13 +717,31 @@ nav img{
     text-align: center;
     padding: 5.5%;
     width:95%;
-    top:12%;
+    top:22%;
   }
   .fullinfo .info{
     left:5%;
     width:95%;
-    top:22%;
-    height: 40%;
+    top:32%;
+    height: 27%;
+  }
+  .set1{
+    display: flex;
+  }
+  .set1 p{
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  .set2{
+    display: flex;
+    margin: 3%;
+  }
+  .mset{
+    display: flex ;
+  }
+  .mset .country{
+    margin-top: 18%;
+    margin-left: 5%;
   }
   .fullinfo .info .WeatherContent{
     width:95%;
@@ -682,8 +758,9 @@ nav img{
   .newsmain{
     width: 95%;
     left:5%;
-    top:65%;
-    height: 35%;
+    top:62%;
+    min-height: 35%;
+    height: fit-content;
   }
   .newsmain .more{
     left: 50%;
