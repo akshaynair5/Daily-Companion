@@ -605,6 +605,10 @@ nav img{
 }
  
 @media only screen and (min-width:400px) and (max-width:720px){
+  body{
+    background-image: none;
+    background-color:#282c34;
+  }
   .FormBox{
     left:15%;
     top:14%;
@@ -626,6 +630,124 @@ nav img{
     background-color: #282c34;
     color: aliceblue;
     border-radius: 25px;
+  }
+   /* navbar css.. */
+   .home nav{
+    top: 20%;
+    height: 100px;
+    /* background-color: #000000; */
+    width: 100%;
+  }
+  nav .link2{
+    width:40%;
+    top:110%;
+    left: 5%;
+    height: 37%;
+  }
+  nav img{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 7%;
+  }
+  nav .link3{
+    width:40%;
+    top:110%;
+    left: 55%;
+    height: 37%;
+  }
+  nav .ipbx{
+    height: 40%;
+    top:50%;
+    left:5%;
+    width:70%;
+    border-color:beige;
+  }
+  .ipbt{
+    top:50%;
+    min-width:15%;
+    width: fit-content;
+    height: 40%;
+    left:77%;
+  }
+  .iplo{
+    min-width:15%;
+    width: fit-content;
+    height: 40%;
+    top: 3%;
+    left: 77%;
+  }
+  nav .navbar-brand{
+    top:0%;
+    left:13%;
+    position: absolute;
+  }
+
+
+  /* weather updates css and news css */
+  .resp1{
+    font-size: 13px;
+    text-align: center;
+    padding: 5.5%;
+    width:95%;
+    top:19%;
+  }
+  .fullinfo .info{
+    left:5%;
+    width:95%;
+    top:30%;
+    height: 27%;
+  }
+  .set1{
+    display: flex;
+  }
+  .set1 p{
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  .set2{
+    display: flex;
+    margin: 3%;
+  }
+  .mset{
+    display: flex ;
+  }
+  .mset .country{
+    margin-top: 18%;
+    margin-left: 5%;
+  }
+  .fullinfo .info .WeatherContent{
+    width:95%;
+    font-size: 8px;
+    height: 100%;
+    align-self: center;
+  }
+  .fullinfo .info .WeatherContent .temp{
+    font-size: 40px;
+  }
+  .fullinfo .info .WeatherContent .country{
+    font-size: 7px;
+  }
+  .newsmain{
+    width: 95%;
+    left:5%;
+    top:60%;
+    min-height: 35%;
+    height: fit-content;
+  }
+  .newsmain .more{
+    left: 50%;
+    width: 35%;
+    top:75%;
+    font-size: small;
+  }
+  .headline{
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .newss{
+    font-size: 12px;
+    font-weight: 700;
   }
   
 }
