@@ -5,6 +5,8 @@ A short quick note is also provided which advices you based on the weather for t
 
 Users can also post short notes to keep themselves on track.
 
+
+
 Photos and functioning-
 Home page
 
