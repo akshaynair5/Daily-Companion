@@ -1,4 +1,4 @@
-Daily Companion is a One stop desitination which gives all the information that you would need for the day!!.
+Daily Companion is a one stop desitination which gives all the information that you would need for the day!!.
 
 It provides you with the latest weather updates based on the city that you live in along with the latest NEWS around world,
 A short quick note is also provided which advices you based on the weather for the rest of the day.
